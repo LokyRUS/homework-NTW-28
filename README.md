@@ -27,6 +27,9 @@
 
 # ![images 2]()
 
+- `c4:e9:1a:70:b1:ac` - Dlink
+
+- `ec:63:d7:b0:bf:3f` - Microsoft Wi-Fi Direct Virtual Adapter
 
 ### Задание 2 (IP).
 
