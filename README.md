@@ -25,7 +25,7 @@
 
 # Ответ: 
 
-# ![images 2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
+# ![images 2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.png)
 
 - `c4:e9:1a:70:b1:ac` - Dlink
 
