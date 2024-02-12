@@ -21,7 +21,7 @@
 *Приведите ответ в виде снимка экрана.*
 
 # Ответ:
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 ### Задание 2.
 
@@ -32,7 +32,7 @@
 *Приведите ответ в виде снимка экрана удачной работы утилиты ping.*
 
 # Ответ:
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 ### Задание 3.
 
@@ -41,7 +41,7 @@
 *Приведите ответ в виде снимка экрана.*
 
 # Ответ:
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
 ## Дополнительные задания (со звездочкой*)
 
@@ -54,4 +54,4 @@
 *Приведите ответ в свободной форме.*
  
  # Ответ:
-# ![images4]()
+# ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
