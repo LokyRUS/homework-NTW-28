@@ -29,10 +29,10 @@
 
 Для подключения к консольному порту , потребуется один из консольных кабелей: 
 -  rj45  - FTDI rs232 - классический 
-# ![image1]()
+# ![image1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.jpg)
 
 - rj45  - FTDI rs232 - c USB конвектором
-# ![image2]()
+# ![image2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.jpg)
 
 И эмулятор терминала, например, Putty. 
 Важно : со стороны терминала, при подключении через консольный кабель, потребуются
