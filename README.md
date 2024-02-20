@@ -211,3 +211,5 @@ Building configuration...
 `pass` - admin
 `enable` - Cisco
 # ![image8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/9.PNG)
+
+# [Скачать файл.pkt]() 
