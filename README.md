@@ -212,4 +212,4 @@ Building configuration...
 `enable` - Cisco
 # ![image8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/9.PNG)
 
-# [Скачать файл.pkt]() 
+# [Скачать файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/file.pkt) 
