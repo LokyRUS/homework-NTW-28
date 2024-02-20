@@ -81,4 +81,133 @@
 
 *Приложите настроенные логины и пароли к решению, приведите ответ в виде pkt-файла*
 
+# Ответ
 
+`Коммутатор`
+
+### Присвоение виртуальному локальному интерфейсу ip адреса, для дальнейшего удаленного взаимодейсвия с ним.
+```
+Switch>enable 
+Switch#configure terminal 
+Switch(config)#interface vlan 1
+Switch(config-if)#ip address 192.168.0.100 255.255.255.0
+Switch(config-if)#no shutdown 
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan1, changed state to up
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+Switch(config-if)#exit 
+Switch(config)#exit
+Switch#wr
+Building configuration...
+[OK]
+```
+
+`Маршрутизатор`
+
+### Присвоение интерфейсу ip адреса, для дальнейшего удаленного взаимодейсвия с ним.
+```
+Router>enable
+Router#
+Router#configure terminal
+Router(config)#interface GigabitEthernet0/0/0
+Router(config-if)#ip address 192.168.0.1 255.255.255.0
+Router(config-if)#no shutdown 
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0/0, changed state to up
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0/0, changed state to up
+Router(config-if)#exit
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+wr
+Building configuration...
+[OK]
+Router#
+```
+### Нахначим нажешу хосту ip адресс
+# ![image3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
+
+## Получившаяся топология
+# ![image4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
+
+## Пингуем коммутатор и маршрутизатор
+
+# ![image5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
+
+
+# `Telnet` - настройка на коммутаторе 
+```
+Switch>enable 
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#use
+Switch(config)#username admin secret admin
+Switch(config)#line vty 0 15
+Switch(config-line)#login local 
+Switch(config-line)#exit
+Switch(config)#enable secret Cisco	
+Switch(config)#exit
+Switch#
+Switch#wr
+Building configuration...
+[OK]
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#do sh run | i user
+username admin secret 5 $1$mERr$vTbHul1N28cEp8lkLqr0f/ # Зашифрованный пароль
+Switch(config)#
+```
+`Проверка работоспособности`
+# ![image6](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/6.PNG)
+
+# `SSH` - настройка на маршрутизаторе
+```
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname R1
+R1(config)#username admin secret admin
+R1(config)#line vty 0 15
+R1(config-line)#login local 
+R1(config-line)#exit
+R1(config)#enable secret Cisco
+R1(config)#do sh run | i user
+username admin secret 5 $1$mERr$vTbHul1N28cEp8lkLqr0f/ # Зашифрованный пароль
+R1#
+%SYS-5-CONFIG_I: Configured from console by console
+R1#wr
+Building configuration...
+[OK]
+R1#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#ip domain-name netology.ru
+R1(config)#crypto key generate rsa
+The name for the keys will be: R1.netology.ru
+Choose the size of the key modulus in the range of 360 to 4096 for your
+  General Purpose Keys. Choosing a key modulus greater than 512 may take
+  a few minutes.
+
+How many bits in the modulus [512]: 2048
+% Generating 2048 bit RSA keys, keys will be non-exportable...[OK]
+R1(config)#exit
+R1#
+%SYS-5-CONFIG_I: Configured from console by console
+wr
+Building configuration...
+[OK]
+```
+# ![image7](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/7.PNG)
+
+# ![image8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/8.PNG)
+
+
+# Авторизация Swich
+
+`User` - admin
+`pass` - admin
+`enable` - Cisco
+
+# Авторизация Router
+`User` - admin
+`pass` - admin
+`enable` - Cisco
+# ![image8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/9.PNG)
