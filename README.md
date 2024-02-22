@@ -34,7 +34,7 @@
 | VLAN 20 | {192.168.0.11; 192.168.0.12 } |
 | VLAN 30 | {192.168.0.14; 192.168.0.15 } |
 
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 # ! Проверим связанность хостов для заполнения твблицы мак адресов  
 
@@ -60,7 +60,7 @@ Switch(config)#exit
 
 - `Проверка настроек `
 
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 ### Настройка vlan 10 на swich 2
 -`создаем vlan10 и переведем интерфейс Fa0/1, на коммутаторе, в режим access vlan 10 
@@ -79,7 +79,7 @@ Switch2(config)#exit
 ```
 
 - `Проверка настроек 
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
 #! Переведем линк между `Switch` и `Switch2` в trunk режим, без данного режима не будет связанности Vlan10, так как они хазодятся за разными коммутаторами.
 
@@ -116,7 +116,7 @@ Switch2(config-if)#
 
 ## проверка связанности
 
-# ![imges4]()
+# ![imges4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 
 ### Настройка vlan 20 на swich 1
 -`создаем vlan20 и переведем интерфейсы Fa0/2 и Fa0/3, на коммутаторе, в режим access vlan 20 
@@ -140,7 +140,7 @@ Switch(config)#exit
 ## проверка связанности
 `! Видно что отсутствует связанность с vlan10`
 
-# ![imges5]()
+# ![imges5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
 
 ### Настройка vlan 30 на swich 2
 -`создаем vlan30 и переведем интерфейсы Fa0/2 и Fa0/3, на коммутаторе, в режим access vlan 30 
@@ -164,9 +164,9 @@ Switch2(config)#exit
 ## проверка связанности
 `! Видно что отсутствует связанность с vlan10 и vlan20`
 
-# ![imges6]()
+# ![imges6](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/6.PNG)
 
-# [скачать.ptk] (https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/file.pkt)
+# [Cкачать.ptk] (https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/file.pkt)
 
 
 ## Дополнительные задания (со звездочкой*)
