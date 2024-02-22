@@ -210,3 +210,11 @@ Switch2(config-if)#no spanning-tree vlan 10
 Switch2(config)#exit
 Switch2#
 ```
+# Далее соединим порты и проверим сначало пинг в добавленной vlan 40
+# ![imges7](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/7.PNG)
+! ping проходит
+
+# При проверке связанности vlan10, происходит бродкаст затопление, пинги не проходят и коммутаторы раскидывают бродкаст запросы постоянно.
+# ![imges8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/8.PNG)
+
+# [Cкачать.ptk](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/file2.pkt)
