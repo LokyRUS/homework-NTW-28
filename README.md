@@ -184,3 +184,29 @@ Switch2(config)#exit
 
 *Приведите ответ в свободной форме.*
 
+# Ответ
+## Switch настройка порта 0/23 в режим trunk и выполнение комманды `no spanning-tree vlan 10`
+```
+Switch>enable 
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface fastEthernet 0/23
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#no spanning-tree vlan 10
+Switch(config)#exit
+Switch#
+```
+
+## Switch2 настройка порта 0/23 в режим trunk и выполнение комманды `no spanning-tree vlan 10`
+```
+Switch2>enable 
+Switch2#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch2(config)#interface fastEthernet 0/23
+Switch2(config-if)#switchport mode trunk 
+Switch2(config-if)#switchport access vlan 10
+Switch2(config-if)#no spanning-tree vlan 10
+Switch2(config)#exit
+Switch2#
+```
