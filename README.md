@@ -166,7 +166,7 @@ Switch2(config)#exit
 
 # ![imges6]()
 
-# [скачать.ptk] ()
+# [скачать.ptk] (https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/file.pkt)
 
 
 ## Дополнительные задания (со звездочкой*)
