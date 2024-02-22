@@ -185,7 +185,8 @@ Switch2(config)#exit
 *Приведите ответ в свободной форме.*
 
 # Ответ
-## Switch настройка порта 0/23 в режим trunk и выполнение комманды `no spanning-tree vlan 10`
+
+## Switch настройка порта 0/23 в режим trunk и выполнение команды `no spanning-tree vlan 10`
 ```
 Switch>enable 
 Switch#configure terminal 
@@ -198,7 +199,7 @@ Switch(config)#exit
 Switch#
 ```
 
-## Switch2 настройка порта 0/23 в режим trunk и выполнение комманды `no spanning-tree vlan 10`
+## Switch2 настройка порта 0/23 в режим trunk и выполнение команды `no spanning-tree vlan 10`
 ```
 Switch2>enable 
 Switch2#configure terminal 
