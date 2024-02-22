@@ -166,7 +166,7 @@ Switch2(config)#exit
 
 # ![imges6](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/6.PNG)
 
-# [Cкачать.ptk](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/file.pkt)
+# [Cкачать.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/file.pkt)
 
 
 ## Дополнительные задания (со звездочкой*)
@@ -218,4 +218,4 @@ Switch2#
 # При проверке связанности vlan10, происходит бродкаст затопление, пинги не проходят и коммутаторы раскидывают бродкаст запросы постоянно.
 # ![imges8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/8.PNG)
 
-# [Cкачать.ptk](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/file2.pkt)
+# [Cкачать.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/file2.pkt)
