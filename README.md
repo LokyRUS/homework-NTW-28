@@ -65,12 +65,12 @@
  # ![image 3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
  
  ### *- Значения TTL для каждого хопа:*
- Hop1 = `ttl=1`
- Hop2 = `ttl=2`
- Hop3 = `ttl=3`
- Hop4 = `ttl=4`
- Hop5 = `ttl=5`
- Hop6 = `ttl=6`
+ - Hop1 = `ttl=1`
+ - Hop2 = `ttl=2`
+ - Hop3 = `ttl=3`
+ - Hop4 = `ttl=4`
+ - Hop5 = `ttl=5`
+ - Hop6 = `ttl=6`
  
  ### *- тип icmp сообщения возвращающийся на каждом этапе трассировки*
   
