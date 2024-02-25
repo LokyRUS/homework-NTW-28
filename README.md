@@ -24,7 +24,7 @@
 # Ответ
 - Выполним команду ping до адреса `ya.ru` пакетами размером 1600 байт. 
 
-# ![image 1]()
+# ![image 1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 До указанного адреса отправлено 4 пакета, однако ответ не был получен, так как превышен максимально допустимый размер. 
 
@@ -58,11 +58,11 @@
 # Ответ 
 
 
-# ![image 2]()
+# ![image 2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
  *- В трассировке 6 hops*
  
- # ![image 3]()
+ # ![image 3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
  
  *- Значения TTL для каждого хопа:*
  Hop1 = `ttl=1`
@@ -74,7 +74,7 @@
  
  *- тип icmp сообщения возвращofdibtcz на каждом этапе трассировки*
   
-  # ![image 4]()
+  # ![image 4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 - Time - to - live exceeded означает, что время выживания закончилось. 
 
 
