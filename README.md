@@ -64,7 +64,11 @@
 
 ---
 # Ответ
-
+|Группа 1 |
+| --- | --- | --- |
+| This | is a | table |
+| This | is 2nd | row |
+| This | is 3rd | row |
 
 
 ### Задание 5.
