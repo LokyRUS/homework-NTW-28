@@ -64,7 +64,7 @@
 
 ---
 # Ответ
-|Группа 1 |
+|Header1|Header2|Header3|
 | --- | --- | --- |
 | This | is a | table |
 | This | is 2nd | row |
