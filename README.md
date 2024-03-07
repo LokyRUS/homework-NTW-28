@@ -33,9 +33,9 @@
 Количество подсетей: `16`
 Расчет производился в соответствии с указанно методикой. 
 
-# [файл Excel]()
+# [файл Excel](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/%D0%A0%D0%B0%D1%81%D1%87%D0%B5%D1%82%20ip%201.xlsx)
 
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 ### Задание 3.
 
@@ -52,9 +52,9 @@
 ---
 # Ответ: 
 в)172.16.30.1
-# [файл Excel2]()
+# [файл Excel2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/%D0%A0%D0%B0%D1%81%D1%87%D0%B5%D1%82%20ip2.xlsx)
 
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 ### Задание 4.
 
@@ -70,9 +70,9 @@
 | адрес шлюза | 192.168.255.1/25 | 192.168.255.129/25 |
 | broadcast адрес | 192.168.255.127/25 | 192.168.255.255/25 |
 
-# [файл Excel3]()
+# [файл Excel3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/%D0%A0%D0%B0%D1%81%D1%87%D0%B5%D1%82%20ip%203.xlsx)
 
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
 #### Ответ на вопрос: Нет, потому что пересечение сетей допускать нельзя. 
 ### Задание 5.
@@ -95,9 +95,9 @@
 |172.16.1.128/25|
 |172.16.2.0/23|
 
-# [файл Excel]()
+# [файл Excel](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/%D0%A0%D0%B0%D1%81%D1%87%D0%B5%D1%82%20ip%204.xlsx)
 
-# ![images4]()
+# ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 ## Дополнительные задания (со звездочкой*)
 
 Эти задания дополнительные (не обязательные к выполнению) и никак не повлияют на получение вами зачета по этому домашнему заданию. Вы можете их выполнить, если хотите глубже и/или шире разобраться в материале.
