@@ -33,9 +33,9 @@
 Количество подсетей: `32`
 Расчет производился в соответствии с указанно методикой. 
 
-# [файл Excel](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/%D0%A0%D0%B0%D1%81%D1%87%D0%B5%D1%82%20ip%201.xlsx)
+# [файл Excel](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/%D0%A0%D0%B0%D1%81%D1%87%D0%B5%D1%82%20ip%201-1.xlsx)
 
-# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1-1.PNG)
 
 ### Задание 3.
 
