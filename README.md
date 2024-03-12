@@ -491,11 +491,11 @@ Router(config-router)#network 192.168.20.0
 Router(config-router)#exit
 ```
 
-# [image7](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/7.PNG)
+# ![image7](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/7.PNG)
 
 Проверка работоспособности и видно, что пакеты идут через вернюю магистрать, это связанно с меньшим коолличесвом хопов или выбор кратчайшего пути.
 
-# [image8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/8.PNG)
+# ![image8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/8.PNG)
 # [Первая часть задания - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie2%20chast1.pkt)
 
 # Вторая часть задания, подлючит дополнительно два маршрутизатора. 
@@ -503,11 +503,11 @@ Router(config-router)#exit
 Настройки новых марштуризаторов аналогичные вышеизложенным. 
 Единственное, было переназначение ip адресов на итерфесов, которые задействованы в смене топологии. 
 
-# [image9](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/9.PNG)
+# ![image9](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/9.PNG)
 
 # Проведя трасировку, видно как пакеты идут по кратчайшему пути с наименьшик колличеством хопов.
 
-# [image10](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/10.PNG)
+# ![image10](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/10.PNG)
 # [Вторая часть задания (Итог) - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie2%20chast2.pkt)
 
 
