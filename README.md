@@ -35,8 +35,7 @@
 
 Как подключение маршрутизаторов повлияло на метрики выбора маршрута и почему, какие выводы вы можете сделать до и после подключения.
 
-![](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99-1.PNG)
-
+<img width="737"  src="https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99-2.PNG">
 *Приведите ответ в свободной форме и пришлите pkt файл.*
 
 ---
