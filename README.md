@@ -22,6 +22,258 @@
 
 *Приведите ответ в свободной форме и пришлите pkt-файл.*
 
+# Ответ
+#	 Настройка интерфейса Gi0/0 на Ruter0
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 192.168.10.1 255.255.255.0
+Router(config-if)#no shutdown 
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+
+```
+`Пингнуем для проверки`
+
+#	 Настройка интерфейса Gi0/0 на Ruter1
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 192.168.20.1 255.255.255.0
+Router(config-if)#no shutdown 
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+```
+`Пингуем для проверки`
+
+# Настроим соединение между Ruter0 (Gig0/1- ip 10.1.1.1/30)и Ruter2 (Gig0/1- ip 10.1.1.2/30)
+
+### Настройка Router0 
+```
+Router#
+Router#enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 10.1.1.1 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+```
+
+### Настройка Router2
+```
+Router>enable 
+Router#configure ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 10.1.1.2 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+```
+`Пингуем для проверки`
+
+# Настроим соединение между Ruter1 (Gig0/2- ip 10.1.2.1/30)и Ruter2 (Gig0/2- ip 10.1.2.2/30)
+
+### Настройка Router1 
+```
+Router#
+Router#enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/2
+Router(config-if)#ip address 10.1.2.1 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+```
+
+### Настройка Router2
+```
+Router>enable 
+Router#configure ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/2
+Router(config-if)#ip address 10.1.2.2 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+
+```
+`Пингуем для проверки`
+
+# Настроим соединение между Ruter0 (Gig0/2- ip 10.1.3.1/30)и Ruter1 (Gig0/1- ip 10.1.3.2/30)
+
+### Настройка Router0 
+```
+Router#
+Router#enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/2
+Router(config-if)#ip address 10.1.3.1 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+```
+
+### Настройка Router1
+```
+Router>enable 
+Router#configure ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/2
+Router(config-if)#ip address 10.1.3.2 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+
+```
+`Пингуем для проверки`
+
+# Первая часть задания маршрутизация через нижний путь Router0 и Router1.
+
+### Настройка Router0 
+```
+Router#
+Router#en
+Router#enable 
+Router#configure ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 192.168.20.0 255.255.255.0 10.1.3.2
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+```
+
+### Настройка Router1
+```
+Router#
+Router#en
+Router#enable 
+Router#configure ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 192.168.10.0 255.255.255.0 10.1.3.1
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+```
+`Пингуем и делаем трасировку для проверки`
+
+# ![images1]()
+
+# ![images2]()
+
+[Файл.pkt] ()
+
+# Вторая часть задания маршрутизация через  верхний путь Router0-Router2-Router1, нижний путь Router0 и Router1 остается запасным.
+
+`Основной путь`
+
+### Настройка Router0 
+```
+Router#
+Router#en
+Router#enable 
+Router#configure ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 192.168.20.0 255.255.255.0 10.1.1.2
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+```
+### Настройка Router1 
+```
+Router#
+Router#en
+Router#enable 
+Router#configure ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 192.168.10.0 255.255.255.0 10.1.2.2
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+```
+
+### Настройка Router2
+```
+Router#
+Router#en
+Router#enable 
+Router#configure ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 192.168.10.0 255.255.255.0 10.1.1.1
+Router(config)#ip route 192.168.20.0 255.255.255.0 10.1.2.1
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+``` 
+`Пингуем и делаем трасировку для проверки`
+
+# ![images3]()
+
+# ![images4]()
+
+`Резервный путь`
+
+### Настройка Router0 
+```
+Router#
+Router#en
+Router#enable 
+Router#configure ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 192.168.20.0 255.255.255.0 10.1.3.2 210
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+```
+
+### Настройка Router1
+```
+Router#
+Router#en
+Router#enable 
+Router#configure ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 192.168.10.0 255.255.255.0 10.1.3.1 210
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+```
+
+`проверка`
+Для корректной работы следует отключить основную линию связи полностью, иначе пинг может не вернуться, а пойти по работоспособному куску главной линии. 
+На скриншоте видно как поменялся маршрут. В этом минус статической маршрутизации при использовании в кольцевой топологии.
+# ![images5]()
+
+[Файл.pkt] ()
+
 
 
 ### Задание 2. Лабораторная работа "Выбор наилучшего маршрута на базе динамической маршрутизации"
