@@ -23,8 +23,8 @@
 *Приведите ответ в свободной форме и пришлите pkt-файл.*
 
 # Ответ
-# [Первая часть задания - скачать file.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%201%20.pkt)
-# [Вторая часть задания - скачать даfile.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%202.pkt)
+# [Первая часть задания - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%201%20.pkt)
+# [Вторая часть задания - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%202.pkt)
 #	 Настройка интерфейса Gi0/0 на Router0
 
 ```
@@ -188,7 +188,7 @@ Router#
 
 # ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
-[Файл.pkt] ()
+# [Первая часть задания - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%201%20.pkt)
 
 # Вторая часть задания маршрутизация через  верхний путь Router0-Router2-Router1, нижний путь Router0 и Router1 остается запасным.
 
@@ -275,7 +275,7 @@ Router#
 # ![images5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
 # ![images6](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/6.PNG)
 
-[Файл.pkt] ()
+# [Вторая часть задания - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%202.pkt)
 
 
 
