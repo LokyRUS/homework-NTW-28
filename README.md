@@ -23,6 +23,8 @@
 *Приведите ответ в свободной форме и пришлите pkt-файл.*
 
 # Ответ
+# [Первая часть задания - скачать file.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%201%20.pkt)
+# [Вторая часть задания - скачать даfile.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%202.pkt)
 #	 Настройка интерфейса Gi0/0 на Router0
 
 ```
