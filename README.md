@@ -182,9 +182,9 @@ Router#
 ```
 `Пингуем и делаем трасировку для проверки`
 
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 [Файл.pkt] ()
 
@@ -233,9 +233,9 @@ Router#
 ``` 
 `Пингуем и делаем трасировку для проверки`
 
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
-# ![images4]()
+# ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 
 `Резервный путь`
 
@@ -270,7 +270,8 @@ Router#
 `проверка`
 Для корректной работы следует отключить основную линию связи полностью, иначе пинг может не вернуться, а пойти по работоспособному куску главной линии. 
 На скриншоте видно как поменялся маршрут. В этом минус статической маршрутизации при использовании в кольцевой топологии.
-# ![images5]()
+# ![images5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
+# ![images6](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/6.PNG)
 
 [Файл.pkt] ()
 
