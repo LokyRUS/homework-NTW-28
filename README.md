@@ -18,7 +18,7 @@
   
 Сделайте вывод, как административная дистанция влияет на маршрут.
 
-<img width="737" alt="Снимок экрана 2021-11-23 в 17 45 04" src="https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99-1.PNG">
+<img width="737"  src="https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99-1.PNG">
 
 *Приведите ответ в свободной форме и пришлите pkt-файл.*
 
