@@ -18,7 +18,7 @@
   
 Сделайте вывод, как административная дистанция влияет на маршрут.
 
-<img width="737" alt="Снимок экрана 2021-11-23 в 17 45 04" src="https://user-images.githubusercontent.com/73060384/143046501-32c03615-6ea6-4bd8-a925-5ad11234b65a.png">
+<img width="737" alt="Снимок экрана 2021-11-23 в 17 45 04" src="https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99-1.PNG">
 
 *Приведите ответ в свободной форме и пришлите pkt-файл.*
 
@@ -35,7 +35,7 @@
 
 Как подключение маршрутизаторов повлияло на метрики выбора маршрута и почему, какие выводы вы можете сделать до и после подключения.
 
-<img width="468" alt="image" src="https://user-images.githubusercontent.com/73060384/142831858-71671547-a415-4d74-bb09-469de2367f4a.png">
+![](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99-1.PNG)
 
 *Приведите ответ в свободной форме и пришлите pkt файл.*
 
