@@ -23,8 +23,8 @@
 *Приведите ответ в свободной форме и пришлите pkt-файл.*
 
 # Ответ
-# [Первая часть задания - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%201%20.pkt)
-# [Вторая часть задания (Итог) - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%202.pkt)
+# [Первая часть задания №1 - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%201%20.pkt)
+# [Вторая часть задания №1 (Итог) - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%202.pkt)
 
 #	 Настройка интерфейса Gi0/0 на Router0
 
@@ -297,8 +297,8 @@ Router#
 ---
 # Ответ
 
-# [Первая часть задания - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie2%20chast1.pkt)
-# [Вторая часть задания (Итог) - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie2%20chast2.pkt)
+# [Первая часть задания №2 - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie2%20chast1.pkt)
+# [Вторая часть задания №2 (Итог) - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie2%20chast2.pkt)
 
 # Настройка роутера Ruter0
 
