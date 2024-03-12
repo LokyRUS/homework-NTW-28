@@ -24,7 +24,8 @@
 
 # Ответ
 # [Первая часть задания - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%201%20.pkt)
-# [Вторая часть задания - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%202.pkt)
+# [Вторая часть задания (Итог) - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie%201%20chast%202.pkt)
+
 #	 Настройка интерфейса Gi0/0 на Router0
 
 ```
@@ -294,6 +295,221 @@ Router#
 *Приведите ответ в свободной форме и пришлите pkt файл.*
 
 ---
+# Ответ
+
+# [Первая часть задания - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie2%20chast1.pkt)
+# [Вторая часть задания (Итог) - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie2%20chast2.pkt)
+
+# Настройка роутера Ruter0
+
+### Настройка интерфейса Gi0/0 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 192.168.10.1 255.255.255.0
+Router(config-if)#no shutdown 
+Router(config-if)#
+```
+### Настройка интерфейса Gi0/1 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 10.1.1.1 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+
+```
+### Настройка Rip
+```
+
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#network 10.0.0.0
+Router(config-router)#network 192.168.10.0
+Router(config-router)#exit
+```
+# Настройка роутера Ruter1
+
+### Настройка интерфейса Gi0/1 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 10.1.1.2 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+
+```
+### Настройка интерфейса Gi0/0 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 10.1.3.1 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+```
+### Настройка интерфейса Gi0/2 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/2
+Router(config-if)#ip address 10.1.5.1 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+```
+### Настройка Rip
+```
+
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#network 10.0.0.0
+Router(config-router)#exit
+```
+
+# Настройка роутера Ruter2
+
+### Настройка интерфейса Gi0/0 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 10.1.3.2 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+
+```
+### Настройка интерфейса Gi0/1
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 10.1.4.2 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+```
+### Настройка Rip
+```
+
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#network 10.0.0.0
+Router(config-router)#exit
+```
+# Настройка роутера Ruter3
+
+### Настройка интерфейса Gi0/1 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 10.1.2.1 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+
+```
+### Настройка интерфейса Gi0/0 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 10.1.4.1 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+```
+### Настройка интерфейса Gi0/2 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/2
+Router(config-if)#ip address 10.1.5.2 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+```
+### Настройка Rip
+```
+
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#network 10.0.0.0
+Router(config-router)#exit
+```
+# Настройка роутера Ruter4
+
+### Настройка интерфейса Gi0/0 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 192.168.20.1 255.255.255.0
+Router(config-if)#no shutdown 
+Router(config-if)#
+```
+### Настройка интерфейса Gi0/1 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 10.1.2.2 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#
+
+```
+### Настройка Rip
+```
+
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#network 10.0.0.0
+Router(config-router)#network 192.168.20.0
+Router(config-router)#exit
+```
+
+# [image7](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/7.PNG)
+
+Проверка работоспособности и видно, что пакеты идут через вернюю магистрать, это связанно с меньшим коолличесвом хопов или выбор кратчайшего пути.
+
+# [image8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/8.PNG)
+# [Первая часть задания - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie2%20chast1.pkt)
+
+# Вторая часть задания, подлючит дополнительно два маршрутизатора. 
+
+Настройки новых марштуризаторов аналогичные вышеизложенным. 
+Единственное, было переназначение ip адресов на итерфесов, которые задействованы в смене топологии. 
+
+# [image9](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/9.PNG)
+
+# Проведя трасировку, видно как пакеты идут по кратчайшему пути с наименьшик колличеством хопов.
+
+# [image10](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/10.PNG)
+# [Вторая часть задания (Итог) - скачать pkt-файл ](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie2%20chast2.pkt)
+
 
 ### Правила приема домашнего задания
 
