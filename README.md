@@ -57,7 +57,43 @@ d)2001:DB80::/27
 
 *Пришлите pkt файл.*
 
-# ![images2]()
+# Ответ
+
+# ![images3]()
+
+# настройка Router0
+```
+Router>enable 
+Router#configure  terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ipv6 address 2001::123/64
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#ipv6 unicast-routing 
+Router(config)#
+```
+
+
+# настройка Router1
+```
+Router>enable 
+Router#configure  terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ipv6 address 2001::140/64
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#ipv6 unicast-routing 
+Router(config)#
+```
+
+# Производим динг с Router0 на адрес Router1
+
+```
+Router#ping 2001::140
+```
+# ![images3]()
 
 [Файл]()
 ---
