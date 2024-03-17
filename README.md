@@ -28,7 +28,7 @@
 ```console
 dig google.com AAAA
 ```
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 ---
 
 ### Задание 3.
@@ -59,7 +59,7 @@ d)2001:DB80::/27
 
 # Ответ
 
-# ![images3]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 # настройка Router0
 ```
@@ -93,7 +93,7 @@ Router(config)#
 ```
 Router#ping 2001::140
 ```
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
 [Файл]()
 ---
