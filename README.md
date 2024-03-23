@@ -111,6 +111,64 @@ Router#ping 2001::140
 
 *Пришлите pkt файл.*
 
+# Ответ
+
+# Настройка Router1 (Gig/01)
+```
+Router#conf terminal 
+
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ipv6 address 2002::/64 eui-64 
+Router(config-if)#no shutdown 
+Router(config-if)#exit
+Router(config)#ipv
+Router(config)#ipv6 unicast-routing 
+Router(config)#
+```
+# Настройка Router3 (Gig/01)
+```
+Router#conf terminal 
+
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ipv6 address 2002::/64 eui-64 
+Router(config-if)#no shutdown 
+Router(config-if)#exit
+Router(config)#ipv
+Router(config)#ipv6 unicast-routing 
+Router(config)#
+```
+
+# ![images4]()
+
+# Настройка Router0 (Gig/01)
+```
+Router#conf terminal 
+
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ipv6 address 2002::/64 eui-64 
+Router(config-if)#no shutdown 
+Router(config-if)#exit
+Router(config)#ipv
+Router(config)#ipv6 unicast-routing 
+Router(config)#
+```
+# Настройка Router2 (Gig/01)
+```
+Router#conf terminal 
+
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ipv6 address 2002::/64 eui-64 
+Router(config-if)#no shutdown 
+Router(config-if)#exit
+Router(config)#ipv
+Router(config)#ipv6 unicast-routing 
+Router(config)#
+```
+
+# ![images5]()
+
+[Файл](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie5.pkt)
+
 ### Задание 6*.
 
 На основе лабораторной работы в Задании 4 настройте на одном из интерфейсов R3 локальный адрес IPv6 и включите DHCPv6. Добавьте к этому интерфейсу ПК/Сервер и сделайте так, чтобы он получил IPv6-адрес.
