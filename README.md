@@ -95,7 +95,8 @@ Router#ping 2001::140
 ```
 # ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
-[Файл](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie4.pkt)
+# [Файл](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie4.pkt)
+
 ---
 
 ### Дополнительные задания (со звездочкой*)
@@ -167,7 +168,7 @@ Router(config)#
 
 # ![images5]()
 
-[Файл](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie5.pkt)
+# [Файл](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie5.pkt)
 
 ### Задание 6*.
 
