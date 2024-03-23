@@ -22,6 +22,9 @@
 
 # ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
+`Принудительное обращение к DNS Google 8.8.8.8`
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
+
 ### Задание 2.
 
 Как настраивается для сетевого пакета размер MTU в сетях, использующих только протокол IPv6?
