@@ -56,7 +56,8 @@
 ---
 # Ответ
 
-# [Файл.pkt]()
+# [Файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/Zadanie3.pkt)
+
 # Настроим dhcp сервер на роутерах для раздачи ip адресов для наших pc
 `Router0`
 ```
