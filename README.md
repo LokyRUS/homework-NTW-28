@@ -54,6 +54,111 @@
   *Приведите ответ в свободной форме.*
 
 ---
+# Ответ
+
+# Настроим dhcp сервер на роутерах для раздачи ip адресов для наших pc
+`Router0`
+```
+Router>en
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#ip address 10.1.1.1 255.255.255.224
+Router(config-if)#no shutdown 
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0/0, changed state to up
+Router(config-if)#exit
+Router(config)#ip dhcp pool Zona1
+Router(dhcp-config)#network 10.1.1.0 255.255.255.224
+Router(dhcp-config)#default-router 10.1.1.1
+Router(dhcp-config)#dns-server 8.8.8.8
+Router(dhcp-config)#exit
+Router(config)#ip dhcp  excluded-address 10.1.1.1
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+Router#
+```
+
+`Router0`
+```
+Router>en
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#ip address 10.1.2.1 255.255.255.224
+Router(config-if)#no shutdown 
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0/0, changed state to up
+Router(config-if)#exit
+Router(config)#ip dhcp pool Zona2
+Router(dhcp-config)#network 10.1.2.0 255.255.255.224
+Router(dhcp-config)#default-router 10.1.2.1
+Router(dhcp-config)#dns-server 8.8.8.8
+Router(dhcp-config)#exit
+Router(config)#ip dhcp  excluded-address 10.1.2.1
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+Router#
+```
+
+# Наcтроим маршрутные интерфейсы и настроим маршрутизацю на роутерах.
+`Router0`
+```
+Router#en
+Router#enable 
+Router#configure ter
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)# ip address 10.1.10.1 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#exit
+Router(config)#ip route 10.1.2.0 255.255.255.224 10.1.10.2
+Router(config)#exit
+
+```
+
+`Router1`
+```
+Router#en
+Router#enable 
+Router#configure ter
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)# ip address 10.1.10.2 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#exit
+Router(config)#ip route 10.1.1.0 255.255.255.224 10.1.10.1
+Router(config)#exit
+
+```
+
+# Таблица коммутации и таблица маршрутизации
+
+# ![images5]()
+
+1. этап. При обмене данными на первом этапе L2 уровня, в рамках локальной мети, будет происходить обмен пакетами на уровне mac адресации как видно из примера, отправленный пакет с хоста адресован мак адресу Роутера, потому хост уже знает, запрашиваемый  им Ip адрес находится ЗА указанным им мак адресом. И пакет идёт в направлении коммутатора
+# ![images6]()
+
+2. Далее идёт отправка пакета в направлении роутера от коммутатора с его макадресом назначения и происходит дальнейшая инкапсуляция. 
+
+# ![images7]()
+
+3. На L3 уровне отправка осуществляется на адрес по маршруту с использованием Ip адресации, за которым находится адрес назначения.
+
+# ![images8]()
+
+4. Далее происходит декапсуляция пакета и цикл повторяется в обратном направлении, но с учётом ответа адреса назначения.
+
 
 ## Дополнительные задания (со звездочкой*)
 
