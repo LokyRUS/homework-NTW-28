@@ -15,12 +15,13 @@
 ---
 # Ответ
 `Работа протокола arp`
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 `Работа протокола DNS`
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
+
 ### Задание 2.
 
 Как настраивается для сетевого пакета размер MTU в сетях, использующих только протокол IPv6?
