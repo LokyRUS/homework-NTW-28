@@ -25,7 +25,7 @@
 
 ------
 
-# Ответ  [Файл.pkt]()
+# Ответ  [Файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE%D0%B5.pkt)
 
 # В данном задании дополнил настройку ACL стандартных листов, что бы вланы не пинговались между собою через Коммутатор L2+
 
@@ -261,7 +261,7 @@ Switch(config-std-nacl)#permit any
 
 ---
 
-# Ответ
+# Ответ [Файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE%D0%B5.pkt)
 
 # Настройка итерфейса на Router0
 ```
@@ -349,7 +349,7 @@ Router(config-if)#no shutdown
 *Результат представить в виде вывода команд *`show ip route` с R_2 и `show vlan brief` с SW_5.*
 
 ---
-
+# Ответ [Файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE%D0%B5.pkt)  
 ### Настройка итерфейса на Router0 для связанности с Router1
 ```
 Router>enable 
@@ -460,7 +460,7 @@ Switch(config)#exit
 
 *Результат представить в виде вывода команд `show ip route` с R_1 и R_2*
 
-# Ответ
+# Ответ [Файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE%D0%B5.pkt)
 ### Настройка маршутов
 
 ### Настройка статической маршрутизации на Router0
