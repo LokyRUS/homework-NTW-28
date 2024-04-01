@@ -14,7 +14,7 @@
 Соберите в среде Packet Tracer приведенную на схеме топологию и выполните задания.
 
 
-![image](https://user-images.githubusercontent.com/71018632/146266900-f142fb82-dd1b-4248-a966-f84154c94254.png)
+![image](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99.PNG)
 ------
 
 ### Задание 1.
