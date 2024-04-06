@@ -88,6 +88,5 @@ lldp run
 ```
 show lldp neighbors detail 
 ```
-# ![images5]()
-
+# ![images5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
 
