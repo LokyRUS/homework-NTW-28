@@ -18,7 +18,7 @@
 ```console
 ping -l 1500 netology.ru -f
 ```
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 `Пример:` Пинг проходит
 ```
@@ -26,7 +26,7 @@ ping -l 1472 netology.ru -f
 ```
 Расчитайте размер по формуле: 1500=1472 (размер пакета ICMP) + 20 (заголовок IP) + 8 (заголовок ICMP)
 
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 ---
 
 ### Задание 2.
@@ -44,7 +44,7 @@ ping -l 1472 netology.ru -f
 
 ### Задание 3.
 
-![](https://i.ibb.co/tQSxS4r/network.png)
+![](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99.PNG)
 
 Какая топология сети изображена на схеме? Сможет ли PC1 передать информацию PC2?
 
@@ -55,7 +55,7 @@ ping -l 1472 netology.ru -f
 На схеме изображена кольцева топология.
 Сможет конечно, но что бы был включен протокол STP, он создаст обрыв линка с переводом его в резервный канал и предотвратит бродкаст шторм. 
 
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
 ! Однако если на комутаторе выполнить команду 
 ```
@@ -63,7 +63,7 @@ no no spanning-tree vlan 1
 ```
 То пинг не пройдет и будет бродкаст шторм 
 
-# ![images4]()
+# ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 
 ## Дополнительные задания (со звездочкой*)
 
