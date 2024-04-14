@@ -58,7 +58,7 @@
 ```
 Switch(config)#spanning-tree mod rapid-pvst 
 ```
-# [Файл-pkt]()
+# [Файл-pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/file.pkt)
 ### Правила приема домашнего задания
 
 В личном кабинете отправлены:
