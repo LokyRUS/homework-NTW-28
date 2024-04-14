@@ -12,7 +12,7 @@
 
 Проанализируйте сеть и предложите пути решения, что пошло не так? 
 
- <img width="1000" alt="image" src="https://user-images.githubusercontent.com/73060384/147534698-3e695732-f3b0-4333-b411-adfb6af83365.png">
+ <img width="1000" alt="image" src="https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99.PNG">
 
 *Ответьте в свободной форме, что нужно проверить и как решить сложившуюся ситуацию.*
 
@@ -40,7 +40,7 @@
 
 Для увеличения надежности и отказоустойчивости сети организации необходимо реализовать STP протокол. 
 
-![DZ RSNT 3 1](https://github.com/netology-code/rsnt-homeworks/assets/77622076/46e58201-e698-44b6-b5c0-8294bb10ec22)
+![DZ RSNT 3 1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/98.PNG)
 
 Ваша задача:
 1. Построить топологию. 
@@ -52,7 +52,7 @@
 
 # Ответ 
 
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 - Настрока STP v2
 ```
