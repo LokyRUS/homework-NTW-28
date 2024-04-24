@@ -74,6 +74,9 @@
 *Приведите ответ в свободной форме.*
 
 ---
+# Ответ
+
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.png)
 
 ### Правила приема домашнего задания
 
