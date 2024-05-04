@@ -65,7 +65,7 @@ Switch(config-if-range)#no shutdown
 # ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 
 
-# [Скачать-Файл.pkt]()
+# [Скачать-Файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie1.pkt)
 
 
 ### Задание 2
@@ -149,7 +149,7 @@ Switch(config-if-range)#no shutdown
 
 # ![images10](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/10.PNG)
 
-# [Скачать-Файл.pkt]()
+# [Скачать-Файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie2.pkt)
 
 ### Задание 3
 
@@ -217,7 +217,7 @@ Switch(config-if-range)#no shutdown
 
 # ![images13](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/13.PNG)
 
-# [Скачать-Файл.pkt]()
+# [Скачать-Файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie3.pkt)
 
 ### Правила приема домашнего задания
 
