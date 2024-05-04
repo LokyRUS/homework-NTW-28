@@ -27,7 +27,7 @@
 Компания ОАО «XXX – век» планирует увеличить пропускную способность канала связи. К вам поступила заявка: настроить статическую агрегацию для сети.  
 Необходимо настроить и проверить доступность компьютеров, проверить настройки через пространство команд show.
 
-![hbc](https://user-images.githubusercontent.com/73060384/150137949-45bfd56c-a35c-4042-9377-5764cb09594d.png)
+![hbc](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/100.PNG)
 
 *Пришлите pkt с полученным проектом*
 
@@ -79,7 +79,7 @@ Switch(config-if-range)#no shutdown
 - проверить настройки через пространство команд show, 
 - проверить работу после отключения основных интерфейсов.
 
-<img width="600" alt="152157053-a276776b-efb9-41e6-9d32-7bbd326373df" src="https://user-images.githubusercontent.com/85602495/152174571-f344c6ec-ec34-4683-8f8b-51dbe57d6b45.png">
+<img width="600" alt="152157053-a276776b-efb9-41e6-9d32-7bbd326373df" src="https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99.PNG">
 
 *Пришлите pkt с полученным проектом*
 
@@ -162,7 +162,7 @@ Switch(config-if-range)#no shutdown
 **Важно!** В эмуляторе Cisco Packet Tracer есть особенность: часть настроек сетевого оборудования в этой лабораторной работе не сохраняется, когда вы сохраняете ее в .pkt файл.  
 **Решение**: На всех сетевых устройствах после окончания настройки нужно выполнить команду "write" или "copy running-config startap-config".
 
-![photo_2023-04-03_13-08-26](https://user-images.githubusercontent.com/77622076/229756419-f559b248-6336-4976-858b-19443ef4c32f.jpg)
+![photo_2023-04-03_13-08-26](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/98.PNG)
 
 <details>
   <summary> Подсказка к заданию 3        
