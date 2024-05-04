@@ -49,20 +49,20 @@ Switch(config-if-range)#no shutdown
 
 `Топология`
 
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 `Информация об агрегированном канале`
 
 
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 `Сводка о канале`
 
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
 `Доступность`
 
-# ![images4]()
+# ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 
 
 # [Скачать-Файл.pkt]()
@@ -126,28 +126,28 @@ Switch(config-if-range)#no shutdown
 
 `Итоговая рабочая топология`
 
-# ![images5]()
+# ![images5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
 
 `Доступность`
 
-# ![images6]()
+# ![images6](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/6.PNG)
 
 `настройки`
-# ![images7]()
+# ![images7](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/7.PNG)
 
 # Топология после перекрытия или обрыва линка, доступность
 
 `Этап перестоения`
 
-# ![images8]()
+# ![images8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/8.PNG)
 
 `'Этап работоспособности`
 
-# ![images9]()
+# ![images9](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/9.PNG)
 
 `Доступность`
 
-# ![images10]()
+# ![images10](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/10.PNG)
 
 # [Скачать-Файл.pkt]()
 
@@ -178,7 +178,7 @@ Switch(config-if-range)#no shutdown
 
 # Топология до агригации каналов
 
-# ![images11]()
+# ![images11](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/11.PNG)
 
 # Настройка агрегации на коммутаторе l2 
 
@@ -211,11 +211,11 @@ Switch(config-if-range)#no shutdown
 
 # Топология до агригации каналов
 
-# ![images12]()
+# ![images12](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/12.PNG)
 
 `Доступность`
 
-# ![images13]()
+# ![images13](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/13.PNG)
 
 # [Скачать-Файл.pkt]()
 
