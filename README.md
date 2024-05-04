@@ -1,4 +1,4 @@
-`Методы логического объединения интерфейсов. Балансировка нагрузки, протоколы`
+# `Методы логического объединения интерфейсов. Балансировка нагрузки, протоколы`
 
 # Исполнитель: Смирнов Кирилл NTW-28
 ### Цель задания
@@ -32,6 +32,41 @@
 *Пришлите pkt с полученным проектом*
 
 ---
+# Ответ
+
+# Настрокай статической агрегации L2 на обоих коммутаторах.
+```
+Switch>enable 
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface range fastEthernet 0/1-4
+Switch(config-if-range)#shutdown 
+Switch(config-if-range)#channel-group 1 mode on
+Switch(config-if-range)#no shutdown 
+
+```
+
+
+`Топология`
+
+# ![images1]()
+
+`Информация об агрегированном канале`
+
+
+# ![images2]()
+
+`Сводка о канале`
+
+# ![images3]()
+
+`Доступность`
+
+# ![images4]()
+
+
+# [Скачать-Файл.pkt]()
+
 
 ### Задание 2
 
@@ -49,6 +84,72 @@
 *Пришлите pkt с полученным проектом*
 
 ---
+# Ответ
+
+# отключаем все интрефейсы с fa0/1-8 на каждом из коммутаторов
+
+```
+Switch>enable 
+Switch#configure terminal 
+Switch(config)#interface range fastEthernet 0/1-8
+Switch(config-if-range)#shutdown 
+```
+
+# Далее назначаем группы 
+
+- `fa0/1-4` - группа 1
+
+- `fa0/5-8` - группа 2
+
+# Насративаем на кадом коммутаторе 
+
+`группа 1`
+
+```
+Switch#
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface range fastEthernet 0/1-4
+Switch(config-if-range)#channel-group 1 mode active 
+Switch(config-if-range)#no shutdown 
+```
+`группа 2`
+
+```
+Switch#
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface range fastEthernet 0/5-8
+Switch(config-if-range)#channel-group 2 mode active 
+Switch(config-if-range)#no shutdown 
+```
+
+`Итоговая рабочая топология`
+
+# ![images5]()
+
+`Доступность`
+
+# ![images6]()
+
+`настройки`
+# ![images7]()
+
+# Топология после перекрытия или обрыва линка, доступность
+
+`Этап перестоения`
+
+# ![images8]()
+
+`'Этап работоспособности`
+
+# ![images9]()
+
+`Доступность`
+
+# ![images10]()
+
+# [Скачать-Файл.pkt]()
 
 ### Задание 3
 
@@ -73,6 +174,50 @@
 
 *Пришлите pkt с полученным проектом*
 
+# Ответ
+
+# Топология до агригации каналов
+
+# ![images11]()
+
+# Настройка агрегации на коммутаторе l2 
+
+```
+Switch>enable 
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface range GigabitEthernet 0/1-2
+Switch(config-if-range)#shutdown 
+Switch(config-if-range)#channel-group 1 mode on
+Switch(config-if-range)#no shutdown 
+```
+# Настройка агрегации на коммутаторе l3
+
+```
+Switch>enable 
+Switch#configure terminal 
+Switch(config)#interface range gigabitEthernet 0/1-2
+Switch(config-if-range)#shutdown 
+Switch(config-if-range)#channel-group 1 mode on 
+Switch(config-if-range)#exit
+Switch(config)#interface port-channel 1
+Switch(config-if)#no switchport 
+Switch(config-if)#ip address 192.168.0.1 255.255.255.0
+Switch(config-if)#exit	
+Switch(config)#interface range gigabitEthernet 0/1-2
+Switch(config-if-range)#no shutdown 
+
+```
+
+# Топология до агригации каналов
+
+# ![images12]()
+
+`Доступность`
+
+# ![images13]()
+
+# [Скачать-Файл.pkt]()
 
 ### Правила приема домашнего задания
 
