@@ -208,6 +208,22 @@ Switch(config)#interface range gigabitEthernet 0/1-2
 Switch(config-if-range)#no shutdown 
 
 ```
+# Настройка балансировки на основе mac адресов, так как при настройке по Ip адрессации на коммутаторе L2 уровня создаются очереди и балнсировка нарушается. Балансмровка достигатеся при слеующих настройках:
+# Настройка балансировки на коммутаторе l2 
+
+```
+Switch>enable 
+Switch#configure terminal 
+Switch(config)#port-channel load-balance src-mac 
+```
+# Настройка балансировки на коммутаторе l3 
+
+```
+Switch>enable 
+Switch#configure terminal 
+Switch(config)#port-channel load-balance dst-mac  
+```
+# В данном случае у нас не будет очередей и одновременные пинги с обоих серверов пройдут по агрегированному каналу одновременно по разным линкам.
 
 # Топология до агригации каналов
 
