@@ -122,6 +122,102 @@ set routing-options static route 192.168.0.0/24 next-hop 10.1.2.1
 
 ---
 
+## 1)Выбор пал на HSRP, является проприетарный протокол Cisco и балансировка трафика не требуется. 
+
+## 2)---
+
+# ![images2]()
+
+###3)--- 
+# [Скачать File.pkt]() 
+
+# Настройка Router 1 
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 192.168.0.1 255.255.255.0
+Router(config-if)#no shutdown 
+Router(config-if)#ex
+
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 10.0.1.1 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#ex
+
+```
+# Настройка Router 2 
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 192.168.0.2 255.255.255.0
+Router(config-if)#no shutdown 
+Router(config-if)#ex
+
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 10.0.2.1 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#ex
+
+```
+# Настройка HSRP на Router 1 
+```
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#standby 1 ip 192.168.0.1
+Router(config-if)#standby 1  priority 100
+
+```
+
+# Настройка HSRP на Router 2 c отслеживанием интерфейса gigabitEthernet 0/2
+```
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#standby 1 ip 192.168.0.1
+Router(config-if)#standby 1  priority 95
+Router(config-if)#standby 1 preemp
+Router(config-if)standby 1 track gigabitEthernet 0/2 
+```
+
+# Настройка Router 3 
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+Router(config-if)#no shutdown 
+Router(config-if)#ex
+
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 10.0.1.2 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#ex
+
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 10.0.2.2 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#ex
+```
+# Настройка маршрутов 
+
+# Настройка Router 1
+```
+Router(config)#ip route 192.168.1.0 255.255.255.0 10.0.1.2
+```
+# Настройка Router 2
+```
+Router(config)#ip route 192.168.1.0 255.255.255.0 10.0.2.2
+```
+
+# Настройка Router 3 c приоритетом маршрутов
+```
+Router(config)#ip route 192.168.0.0 255.255.255.0 10.0.2.1 10
+Router(config)#ip route 192.168.0.0 255.255.255.0 10.0.1.1 20
+```
+
+
 ### Задание 3
 
 Компания та же, но в центральном офисе добавили еще один маршрутизатор. Оборудование __Cisco__.
