@@ -52,7 +52,7 @@
 
 ## 2)---
 
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 ## 3)---
 
@@ -126,7 +126,7 @@ set routing-options static route 192.168.0.0/24 next-hop 10.1.2.1
 
 ## 2)---
 
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 ###3)--- 
 # [Скачать File.pkt]() 
