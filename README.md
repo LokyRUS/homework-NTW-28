@@ -46,6 +46,66 @@
  На вопрос 3 - привести настройки интерфейсов в текстовом виде (в синтаксисе Juniper - [ссылка на руководство](https://www.juniper.net/documentation/ru/ru/software/junos/high-availability/topics/example/vrrp-configuring-example.html))*
 
 ---
+# Ответ 
+
+## 1) выбор пал на VRRP, он поддерживается juniper. HSRP и GLBP -Проприетарный протокол Cisco 
+
+## 2)---
+
+# ![images1]()
+
+## 3)---
+
+# Настройка Router 0
+
+```
+user@Router0# set interfaces ge-0/0/2 unit 0 family inet address 192.168.0.1/24
+user@router0# set interfaces ge-0/0/1 unit 0 family inet address 10.0.1.1/24
+```
+```
+user@router0# set vrrp-group 1 virtual-address 192.168.0.254
+```
+```
+user@router0# set vrrp-group 1 accept-data
+```
+```
+set routing-options static route 192.168.1.0/24 next-hop 10.1.1.2
+```
+
+# Настройка Router 1
+
+```
+user@Router1# set interfaces ge-0/0/2 unit 0 family inet address 192.168.0.2/24
+user@Router1# set interfaces ge-0/0/1 unit 0 family inet address 10.0.2.1/24
+```
+```
+user@router1# set vrrp-group 1 virtual-address 192.168.0.254
+```
+```
+user@router1# set vrrp-group 1 priority 110
+```
+```
+user@router1# set vrrp-group 1 track interface ge-0/0/2 priority-cost 20
+```
+```
+user@router0# set vrrp-group 1 accept-data
+```
+```
+set routing-options static route 192.168.1.0/24 next-hop 10.1.2.2
+```
+# Настройка Router 2
+```
+user@Router2# set interfaces ge-0/0/1 unit 0 family inet address 10.0.1.2/24
+user@Router2# set interfaces ge-0/0/2 unit 0 family inet address 10.0.2.2/24
+```
+
+```
+set routing-options static route 192.168.0.0/24 next-hop 10.1.1.1 preference 6
+set routing-options static route 192.168.0.0/24 next-hop 10.1.2.1 
+```
+
+### `preference` - аналог административной дистанции маршрута в cisco. Изначально, для статического маршрута значение preference = 5. Ставлю для резервного маршрута preference = 6, чтобы использоват  в случае недоступности основого next-hop адреса.
+
 
 ### Задание 2. Лабораторная работа "Выбор и настройка протокола из семейства FHRP"
 
