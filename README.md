@@ -129,7 +129,7 @@ set routing-options static route 192.168.0.0/24 next-hop 10.1.2.1
 # ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 ###3)--- 
-# [Скачать File.pkt]() 
+# [Скачать File.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%202.pkt) 
 
 # Настройка Router 1 
 ```
