@@ -246,7 +246,7 @@ Router(config)#ip route 192.168.0.0 255.255.255.0 10.0.1.1 20
 
 ## 2)--- 
 
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
 # 3)---
 # Общие натсройки связанности
