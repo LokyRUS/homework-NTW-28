@@ -239,6 +239,98 @@ Router(config)#ip route 192.168.0.0 255.255.255.0 10.0.1.1 20
 На вопрос 2 - приложить файл в формате .png или .jpg.  
 На вопрос 3 - привести настройки интерфейсов в текстовом виде (в синтаксисе Cisco)*
 
+# Ответ 
+
+
+## 1)Выбор GLBP , является проприетарный протокол Cisco? который так же может балансировать трафик. 
+
+## 2)--- 
+
+# ![images3]()
+
+# 3)---
+# Общие натсройки связанности
+
+# Настройка Router 1 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 10.1.0.1 255.255.255.252
+Router(config-if)#no shutdown 
+```
+# Настройка Router 0 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/2
+Router(config-if)#ip address 10.2.0.1 255.255.255.252
+Router(config-if)#no shutdown 
+```
+
+# Настройка Router 4 
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 10.3.0.1 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#ex
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 192.168.0.3 255.255.255.0
+```
+
+# Настройка Router 3 Провайдер 
+
+
+# настройка loopback
+```
+Router(config)#interface loopback 1
+Router(config-if)#ip ad 8.8.8.8 255.255.255.255
+```
+# Общие натсройки связанности
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 10.1.0.2 255.255.255.252
+Router(config-if)#no shutdown 
+Router(config-if)#ex
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 10.2.0.2 255.255.255.252
+Router(config-if)#ex
+Router(config)#interface gigabitEthernet 0/2
+Router(config-if)#ip address 10.3.0.2 255.255.255.252
+```
+# Настройк GLBP
+
+## Настройка Router 1 
+```
+Router(config-if)#glbp 1 ip 192.168.0.1
+Router(config-if)#glbp 1 priority 255
+Router(config-if)#glbp 1 preempt delay minimum 15
+Router(config-if)#glbp 1 authentication md5 XXXXXX
+```
+## Настройка Router 0 
+```
+Router(config-if)#glbp 1 ip 192.168.0.1
+Router(config-if)#glbp 1 preempt delay minimum 15
+Router(config-if)#glbp 1 authentication md5 XXXXXX
+```
+## Настройка Router 4 
+```
+Router(config-if)#glbp 1 ip 192.168.0.1
+Router(config-if)#glbp 1 priority 90
+Router(config-if)#glbp 1 authentication md5 XXXXXX
+```
+
 ### Правила приема домашнего задания
 
 В личном кабинете отправлены:
