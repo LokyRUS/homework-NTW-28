@@ -29,7 +29,7 @@
 ---
 # Ответ
 1. Root-комутатором является Distib_SW1, запущен протокол STP первой версии тандарт IEEE 802.1D.
-2. # ![images1]()
+2. # ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 3. Loopback1 интерфейс на WAN Primary отсутствует.
 4. Loopback1 интерфейс на WAN Backup  отсутствует.
 
@@ -57,7 +57,7 @@ Laptop2 - VLAN 10 - 192.168.10.20/24
 
 # [Файл.pkt]()
 Итоговая топология 
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 1. ip назначены
 2. На скриншоте
