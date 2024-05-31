@@ -75,6 +75,32 @@ spanning-tree vlan 10,20,30 root primary
 spanning-tree vlan 10,20,30 root secondary 
 ```
 5. Выполнено 
+
+6. Назначены
+`Layer Switch 1 `
+```
+interface vlan 10
+standby 1 ip 192.168.10.254
+Router(config-if)#standby 1 priority 100
+```
+```
+interface vlan 20
+standby 2 ip 192.168.20.254
+Router(config-if)#standby 1 priority 100
+```
+
+`Layer Switch 2 `
+```
+interface vlan 10
+standby 1 ip 192.168.10.254
+Router(config-if)#standby 1 priority 90
+```
+```
+interface vlan 20
+standby 2 ip 192.168.20.254
+Router(config-if)#standby 1 priority 90
+```
+
 ### Правила приема домашнего задания
 
 В личном кабинете отправлен pkt файл с выполненным проектом.
