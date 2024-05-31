@@ -55,7 +55,7 @@ Laptop2 - VLAN 10 - 192.168.10.20/24
 
 # Ответ
 
-# [Файл.pkt]()
+# [Файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/3.6_Home_work_v4.pkt)
 Итоговая топология 
 # ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
