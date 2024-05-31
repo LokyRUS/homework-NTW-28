@@ -53,7 +53,28 @@ Laptop2 - VLAN 10 - 192.168.10.20/24
 7. Убедитесь с помощью пинга в доступности адреса 8.8.8.8 на маршрутизаторе провайдера с Laptop0, Laptop1, Laptop2.
 8. Повторите проверку доступности адреса 8.8.8.8 при отключении маршрутизатора WAN Primary и коммутатора Distibution Layer Switch 1. 
 
+# Ответ
+Итоговая топология 
+# ![images3]()
 
+1. ip назначены
+2. На скриншоте
+3. Версия STP поменна на RSTP
+
+```
+spanning-tree mode rapid-pvst
+```
+4. Назначены
+
+`Distibution Layer Switch 1`
+```
+spanning-tree vlan 10,20,30 root primary 
+```
+`Distibution Layer Switch 2`
+```
+spanning-tree vlan 10,20,30 root secondary 
+```
+5. Выполнено 
 ### Правила приема домашнего задания
 
 В личном кабинете отправлен pkt файл с выполненным проектом.
