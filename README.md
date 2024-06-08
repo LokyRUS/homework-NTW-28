@@ -192,6 +192,8 @@ Router(config-if)#ex
 
 5.`clear ip ospf process`
 
+
+# [Файл.pkt-решение](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/homework.pkt)
 ### Правила приема домашнего задания
 
 В личном кабинете отправлена ссылка на документ (Google Doc) с выполненным заданием. В документе настроены права доступа “Просматривать могут все в Интернете, у кого есть ссылка”.
