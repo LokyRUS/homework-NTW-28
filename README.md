@@ -105,17 +105,17 @@ Router(config-if)#ex
 ```
 ## Nаблицf маршрутизации
 `Router1`
- # ![images 1]()
+ # ![images 1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 `Router2`
- # ![images 2]()
+ # ![images 2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
  `Router3`
- # ![images 3]()
+ # ![images 3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
  `Router4`
- # ![images 4]()
+ # ![images 4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 
  # Связность всех Loopback
  
- # ![images 5]()
+ # ![images 5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
 ------
 
 ### Задание 2. Проверка построения соседства
@@ -130,9 +130,9 @@ Router(config-if)#ex
 Передется AreaID в Hello OSPF пакетах и в ответах от соседей. 
 Передается формате A.B.C.D.
 1) отправленный пакет
-# ![images 6]()
+# ![images 6](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/6.PNG)
 2) полученный пакет
-# ![images 7]()
+# ![images 7](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/7.PNG)
 ------
 ### Задание 3. Оповещение соседей о потерянном маршруте
 
@@ -145,9 +145,9 @@ Router(config-if)#ex
 ------
 # Ответ
 После падения Loopback 0 , оправляется бродкастный OSPF пакет об обновлении осотяния сязанности. 
-# ![images 8]()
+# ![images 8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/8.PNG)
 Все соседин принимают пакет и происзодит перестроение таблицы маршрутизации. 
-# ![images 9]()
+# ![images 9](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/9.PNG)
 
 ### Задание 4. Определение DR и BDR
 
@@ -162,7 +162,7 @@ Router(config-if)#ex
 
 - Роутер 4 , который имеет больший id остается DR, а Роутер 3 BDR. отключение Loopback не влияет на перераспреление ролей, для этого требуется перезагрузка сети.
 
-# ![images 10]()
+# ![images 10](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/10.PNG)
 
 ### Задание 5. Диагностика работы протокола
 
@@ -176,19 +176,19 @@ Router(config-if)#ex
 # Ответ
 1. `show ip ospf`
 
-# ![images 11]()
+# ![images 11](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/11.PNG)
 
 2. `show ip ospf database`
 
-# ![images 12]()
+# ![images 12](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/12.PNG)
 
 3. `show ip ospf neighbor` 
 
-# ![images 13]()
+# ![images 13](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/13.PNG)
 
 4. `show ip ospf interface brief`
 
-# ![images 13]()
+# ![images 13](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/14.PNG)
 
 5.`clear ip ospf process`
 
