@@ -50,6 +50,72 @@
  
 *Выполните необходимую конфигурацию и приложите список сделанных команд для каждого маршрутизатора.*
 
+# Ответ
+`Настройка Router1`
+```
+Router(config)#router ospf 1
+Router(config)#interface fastEthernet 0/0
+Router(config-if)#ip ospf 1 area 0
+Router(config-if)#ex
+Router(config)#interface fastEthernet 0/1
+Router(config-if)#ip ospf 1 area 0
+Router(config-if)#ex
+Router(config)#interface loopback 0
+Router(config-if)#ip ospf 1 area 0
+Router(config-if)#ex
+```
+`Настройка Router2`
+```
+Router(config)#router ospf 1
+Router(config)#interface fastEthernet 0/0
+Router(config-if)#ip ospf 1 area 0
+Router(config-if)#ex
+Router(config)#interface fastEthernet 0/1
+Router(config-if)#ip ospf 1 area 0
+Router(config-if)#ex
+Router(config)#interface loopback 0
+Router(config-if)#ip ospf 1 area 0
+Router(config-if)#ex
+```
+`Настройка Router3`
+```
+Router(config)#router ospf 1
+Router(config)#interface fastEthernet 0/0
+Router(config-if)#ip ospf 1 area 0
+Router(config-if)#ex
+Router(config)#interface fastEthernet 0/1
+Router(config-if)#ip ospf 1 area 0
+Router(config-if)#ex
+Router(config)#interface loopback 0
+Router(config-if)#ip ospf 1 area 0
+Router(config-if)#ex
+```
+`Настройка Router4`
+```
+Router(config)#router ospf 1
+Router(config)#interface fastEthernet 0/0
+Router(config-if)#ip ospf 1 area 0
+Router(config-if)#ex
+Router(config)#interface fastEthernet 0/1
+Router(config-if)#ip ospf 1 area 0
+Router(config-if)#ex
+Router(config)#interface loopback 0
+Router(config-if)#ip ospf 1 area 0
+Router(config-if)#ex
+```
+## Nаблицf маршрутизации
+`Router1`
+ # ![images 1]()
+`Router2`
+ # ![images 2]()
+ `Router3`
+ # ![images 3]()
+ `Router4`
+ # ![images 4]()
+
+ # Связность всех Loopback
+ 
+ # ![images 5]()
 ------
 
 ### Задание 2. Проверка построения соседства
