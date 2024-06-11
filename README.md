@@ -34,7 +34,7 @@
 Исходя из топологии на картинке, определите тип всех маршрутизаторов (internal, backbone, ABR).  
 Файл с изначальной конфигурацией маршрутизаторов можете найти [здесь]( https://github.com/netology-code/drut-homeworks/blob/main/4-03/homework_4_3_routers_config.txt ) - 
 
-![image](https://github.com/netology-code/drut-homeworks/blob/main/4-03.png)
+![image](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99.PNG)
 
 *Приведите список маршрутизаторов R1, R2, R3, R4, R5, R6, R7 c указанием их типов.*
 
