@@ -63,7 +63,7 @@
 # Ответ 
 
 1) -----
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 1) Метрика у данных маршрутов будет одинаковая, так как эталонная пропускная способность (Reference bandwidth) равна 100 Mbps (default).
 2) OSPF предложить установить в таблицу маршрутизации два маршрута.
@@ -76,7 +76,7 @@ Router(config-router)#auto-cost reference-bandwidth ?
 <1-4294967> The reference bandwidth in terms of Mbits per second
 Router1(config-router)#auto-cost reference-bandwidth 1000
 ```
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 ### Задание 3 
 
@@ -91,7 +91,7 @@ Router1(config-router)#auto-cost reference-bandwidth 1000
 # Ответ 
 1)Будут выбраны R1-R2-R4, R1-R3-R4, если учитывать дефолтные настройки (Reference bandwidth) равной 100 Mbps (default)
 2) Через боа пути будет динаковая метрика = 14 (cost)
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 3)Установить (Reference bandwidth) cамого производительного интерфейса, на R1;R2;R3;R4;R5, а именно 10GBps 
  Команда для изменения*
 ```
@@ -101,7 +101,7 @@ Router(config-router)#auto-cost reference-bandwidth ?
 <1-4294967> The reference bandwidth in terms of Mbits per second
 Router1(config-router)#auto-cost reference-bandwidth 1000
 ```
-# ![images4]()
+# ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 4)После изменения, OSPF предложить установить в таблицу маршрутизации маршрут R1-R3-R4, как самый дешовый и оптимальный. 
 
 ## Дополнительные задания (со звездочкой*)
