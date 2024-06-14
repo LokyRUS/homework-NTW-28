@@ -110,6 +110,7 @@ Router1(config-router)#auto-cost reference-bandwidth 1000
 - Приоритетный маршут межзональный(inter-area) - O IA R1-R3-R4;
 - Резервный межзональный (inter-area) - O IA R1-R5;
 - Резервный межзональный (inter-area) - O IA R1-R2-R4.
+
  Выбор производится исходя из метрики.  
 ## Дополнительные задания (со звездочкой*)
 
