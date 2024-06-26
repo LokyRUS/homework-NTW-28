@@ -52,7 +52,7 @@
 # Ответ 
 Сеть анансирована в той автономной системе, к которой пренадлежит бордер роутер. 
 
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 ### Задание 3. Лабораторная работа "Настройка конфигурации BGP"
 
@@ -64,7 +64,7 @@
 
 # [файл-скачать]()
 
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 Команды: 
 
@@ -80,9 +80,9 @@ R1(config-router)#network 192.168.10.0
 R1(config-router)#network 10.10.10.0
 R1(config-router)#neighbour 10.10.10.1 remote-as 1
 
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
-# ![images4]()
+# ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 
 ---
 
