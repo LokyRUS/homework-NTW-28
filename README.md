@@ -65,6 +65,25 @@
 # [файл-скачать]()
 
 # ![images2]()
+
+Команды: 
+
+ - Настройка R1 
+R1(config)#route bgp 1 
+R1(config-router)#network 192.168.0.0
+R1(config-router)#network 10.10.10.0
+R1(config-router)#neighbour 10.10.10.2 remote-as 2
+
+ - Настройка R2 
+R1(config)#route bgp 2 
+R1(config-router)#network 192.168.10.0
+R1(config-router)#network 10.10.10.0
+R1(config-router)#neighbour 10.10.10.1 remote-as 1
+
+# ![images3]()
+
+# ![images4]()
+
 ---
 
 ## Дополнительные задания (со звездочкой*)
