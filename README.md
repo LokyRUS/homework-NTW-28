@@ -62,7 +62,7 @@
 
 # Ответ 
 
-# [файл-скачать]()
+# [файл-скачать](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/DZ%203.pkt)
 
 # ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
