@@ -29,6 +29,11 @@
 
 *Приведите ответ в свободной форме.*
 
+# Ответ: 
+`Keepalive` – по умолчанию каждые 60 секунд.
+ Ещё, возможно, `Route refresh`
+
+
 ### Задание 2. Лабораторная работа "Настройка конфигурации BGP"
 
 1. В Cisco Packet Tracer соберите сеть, состоящую из двух маршрутизаторов R1 и R2, находящиеся в разных AS.
@@ -38,7 +43,52 @@
 5. Все маршрутизаторы должны находиться в уникальных AS. 
 
 *Пришлите pkt файл.*
+# Ответ
 
+`Настройка R1`
+```
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router bgp 100
+Router(config-router)#network 192.168.10.0 mask 255.255.255.0
+Router(config-router)#network 10.10.0.0 mask 255.255.255.252
+Router(config-router)#network 10.20.0.0 mask 255.255.255.252
+Router(config-router)#neighbor 10.10.0.2 remote-as 200
+Router(config-router)#neighbor 10.10.20.1 remote-as 500
+```
+`Настройка R2`
+```
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router bgp 1200
+Router(config-router)#network 192.168.20.0 mask 255.255.255.0
+Router(config-router)#network 10.10.0.0 mask 255.255.255.252
+Router(config-router)#network 10.30.0.0 mask 255.255.255.252
+Router(config-router)#neighbor 10.10.0.1 remote-as 100
+Router(config-router)#neighbor 10.10.30.1 remote-as 400
+```
+`Настройка R4`
+```
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router bgp 400
+Router(config-router)#network 192.168.30.0 mask 255.255.255.0
+Router(config-router)#network 10.10.30.0 mask 255.255.255.252
+Router(config-router)#network 10.10.10.0 mask 255.255.255.252
+Router(config-router)#neighbor 10.10.10.1 remote-as 500
+Router(config-router)#neighbor 10.10.30.2 remote-as 200
+```
+`Настройка R5`
+```
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router bgp 500
+Router(config-router)#network 192.168.40.0 mask 255.255.255.0
+Router(config-router)#network 10.10.10.0 mask 255.255.255.252
+Router(config-router)#network 10.10.20.0 mask 255.255.255.252
+Router(config-router)#neighbor 10.10.10.2 remote-as 400
+Router(config-router)#neighbor 10.10.20.2 remote-as 100
+```
 ### Задание 3
 На основе предыдущей лабораторной работы настройте маршрутизацию таким образом, чтобы трафик от R2 проходил через маршрутизаторы: R4->R5->R1.
 В качестве ответа приложите примеры конфигураций устройств.
