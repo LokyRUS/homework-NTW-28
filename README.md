@@ -101,6 +101,8 @@ Router(config-router)#neighbor 10.10.20.2 remote-as 100
 
 # Ответ 
 
+## `route-map` в Cisco Pakcet Tracer отказывается работать.  
+
 1)Вариант настройки атрибута `Weight`
 
 `Настройка Weight R1` 
