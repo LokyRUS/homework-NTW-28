@@ -47,7 +47,7 @@
 # Ответ
 
 # [Скачать Файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/dz.pkt)
-# ![iamges1]()
+# ![iamges1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 `Настройка R1`
 ```
