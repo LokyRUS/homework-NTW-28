@@ -99,6 +99,47 @@ Router(config-router)#neighbor 10.10.20.2 remote-as 100
 
 *Приведите ответ в свободной форме.*
 
+# Ответ 
+
+1)Вариант настройки атрибута `Weight`
+
+`Настройка Weight R1` 
+
+```
+R1(config)#route-map weight-500
+R1(config-route-map)#set weight 500
+R1(config)#router bgp 100
+R1(config-router)#neighbor 10.10.20.1 route-map weight-500 in
+
+```
+`Настройка Weight R2` 
+
+```
+R1(config)#route-map weight-400
+R1(config-route-map)#set weight 400
+R1(config)#router bgp 200
+R1(config-router)#neighbor 10.10.30.1 route-map weight-400 in
+
+```
+1)Вариант настройки атрибута `AS path prepend`
+
+`Настройка AS path prepend на R1` 
+
+```
+R1(config)#route-map as-prepend-200
+R1(config-route-map)#set as-path prepend 100 100 100
+R1(config)#router bgp 100
+R1(config-router)#neighbor 10.10.0.2 route-map as-prepend-200 out
+```
+
+`Настройка AS path prepend на R2` 
+
+```
+R1(config)#route-map as-prepend-100
+R1(config-route-map)#set as-path prepend 200 200 200
+R1(config)#router bgp 200
+R1(config-router)#neighbor 10.10.0.1 route-map as-prepend-100 out
+```
 
 ### Правила приема домашнего задания
 
