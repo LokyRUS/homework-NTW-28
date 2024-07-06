@@ -104,6 +104,31 @@ ISP B AS_300 community:
 *Приведите ответ в свободной форме.*
 
 ---
+# Ответ
+1. community
+2. Достаточно создать комунити лист, с запретом и разрешением нужного трафика.
+3. 
+```
+R1(config)#ip bgp-community new-format
+R1(config)#ip community-list standard loc-pref-500 permit
+200:XXX
+R1(config)#route-map client-loc-pref500-in
+R1(config-route-map)#match community loc-pref-500
+R1(config-route-map)#set local-preference 500
+R1(config)#router bgp 100
+R1(config-router)#neighbor 10.10.10.2 route-map
+client-loc-pref500-in in
+R1(config-router)#ex
+R1(config)#ip community-list standard loc-pref-100 dany
+300:XXX
+R1(config)#route-map client-loc-pref100-in
+R1(config-route-map)#match community loc-pref-100
+R1(config-route-map)#set local-preference 100
+R1(config)#router bgp 100
+R1(config-router)#neighbor 20.20.20.2 route-map
+client-loc-pref100-in in
+
+```
 
 ## Дополнительные задания (со звездочкой*)
 
