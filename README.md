@@ -46,6 +46,16 @@
 *Приведите ответ в свободной форме.*
 
 ---
+# Ответ 
+1. Local Preference
+2.  Используя Local Preference можно достаточно легко направлять трафик во вне, в рамках автономной системы (in). Тем самым выбрав приритетное направление.
+3.
+```
+R1(config)#route-map local-pref-200
+R1(config-route-map)#set local-preference 500
+R1(config)#router bgp 100
+R1(config-router)#neighbor 10.10.10.2 route-map local-pref-200 in
+```
 
 ### Задание 2
 
@@ -61,6 +71,15 @@
 *Приведите ответ в свободной форме.*
 
 ---
+# Ответ
+1. AS Path
+2. Достаточно прос тв применении и легко настраиваеться.
+3.
+```R1(config)#route-map as-prepend-x3
+R1(config-route-map)#set as-path prepend 100 100 100
+R1(config)#router bgp 100
+R1(config-router)#neighbor 20.20.20.2 route-map as-prepend-x3 out
+```
 
 ### Задание 3
 
