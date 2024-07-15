@@ -84,7 +84,7 @@ Router(config-if)#no shutdown
 ```
 ## Выполняем команду ping между R1 и R3. Результат на скриншоте
 
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 *Пинг не прошел, так как не известен маршрут*
 
 `Настройка статической маршрутизацию`
@@ -110,7 +110,7 @@ Router(config)#ex
 ```
 ## Выполняем команду ping между R1 и R3. Результат на скриншоте
 
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 *Пинг прошел*
 
 [Скачать файл.pkt]()
@@ -188,25 +188,25 @@ Router(config-if)#ex
 show ip ospf
 ```
 
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
 
 ```
 show ip ospf neighbor
 ```
 
-# ![images4]()
+# ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 
 ```
 show ip ospf database
 ```
 
-# ![images5]()
+# ![images5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
 
 ```show ip route ospf
 ```
 
-# ![images6]()
+# ![images6](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/6.PNG)
 
 #R2
 
@@ -214,26 +214,25 @@ show ip ospf database
 show ip ospf
 ```
 
-# ![images7]()
+# ![images7](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/7.PNG)
 
 
 ```
 show ip ospf neighbor
 ```
-
-# ![images8]()
+# ![images8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/8.PNG)
 
 ```
 show ip ospf database
 ```
 
-# ![images9]()
+# ![images9](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/9.PNG)
 
 ```
 show ip route ospf
 ```
 
-# ![images10]()
+# ![images10](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/10.PNG)
 
 #R3
 
@@ -241,26 +240,26 @@ show ip route ospf
 show ip ospf
 ```
 
-# ![images11]()
+# ![images11](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/11.PNG)
 
 
 ```
 show ip ospf neighbor
 ```
 
-# ![images12]()
+# ![images12](https://github.com/LokyRUS/homework-NTW-328/blob/nevidimka/images/12.PNG)
 
 ```
 show ip ospf database
 ```
 
-# ![images13]()
+# ![images13](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/13.PNG)
 
 ```
 show ip route ospf
 ```
 
-# ![images14]()
+# ![images14](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/14.PNG)
 
 [Скачать файл2.pkt]()
 
@@ -293,7 +292,7 @@ show ip route ospf
 - vdscom.ru
 
 2) 
-# ![images15]()
+# ![images15](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/15.PNG)
 
 - Версия интернет демона 
 - router-id
@@ -304,7 +303,7 @@ show ip route ospf
 
 3)Информация о соседе  
 
-# ![images16]()
+# ![images16](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/16.PNG)
 Информация типовая 
 только разные префиксы  
  
