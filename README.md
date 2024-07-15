@@ -113,7 +113,7 @@ Router(config)#ex
 # ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 *Пинг прошел*
 
-[Скачать файл.pkt]()
+# [Скачать файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie1.pkt)
  
 ### Задание 2.
  
@@ -261,7 +261,7 @@ show ip route ospf
 
 # ![images14](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/14.PNG)
 
-[Скачать файл2.pkt]()
+# [Скачать файл2.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie2.pkt)
 
 Проблема заключается в том, что зона 0 разорвана по середине и не возможна передача моршрутной инофрмации. Срабатывыает защита от неоптимальной маршутизации. Что бы решить эту проблему, можно поднять виртульный канал. 
 
