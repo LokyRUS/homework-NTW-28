@@ -44,6 +44,76 @@
 *Результаты выполнения задания оформить в один документ: скриншоты + текст. Так же предоставить файл .pkt*
 
 ------
+
+# Ответ
+
+`Настройка интерфейсов`
+
+Настройка R1 
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#ip address 192.168.14.1 255.255.255.0
+Router(config-if)#no shutdown 
+
+```
+Настройка R2 
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#ip address 192.168.14.2 255.255.255.0
+Router(config-if)#no shutdown 
+Router(config-if)#ex
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)#ip address 192.168.30.1 255.255.255.0
+Router(config-if)#no shutdown 
+```
+ Настройка R3 
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)#ip address 192.168.30.2 255.255.255.0
+Router(config-if)#no shutdown 
+
+```
+## Выполняем команду ping между R1 и R3. Результат на скриншоте
+
+# ![images1]()
+*Пинг не прошел, так как не известен маршрут*
+
+`Настройка статической маршрутизацию`
+
+Настройка R1
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 192.168.30.0 255.255.255.0 192.168.14.2
+Router(config)#ex
+```
+
+Настройка R3
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 192.168.14.0 255.255.255.0 192.168.30.1
+Router(config)#ex
+```
+## Выполняем команду ping между R1 и R3. Результат на скриншоте
+
+# ![images2]()
+*Пинг прошел*
+
+[Скачать файл.pkt]()
  
 ### Задание 2.
  
@@ -65,7 +135,138 @@
 *Вывод команд оформить в виде скриншотов, ответ на 3 в текстовом виде. Всё оформить в один документ. Также предоставить файл .pkt*
 
 ------
- 
+ # Ответ 
+
+`Настройка динамическую ospf маршрутизацию`
+
+Настройка R1
+```
+Router#configure terminal 
+Router(config)#router ospf 1
+Router(config-router)#ex
+Router(config)#router ospf 2
+Router(config-router)#ex
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#ip ospf 1 area 1
+Router(config-if)#ex
+Router(config-router)#ex
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)#ip ospf 2 area 0
+Router(config-if)#ex
+```
+Настройка R2
+
+```
+Router#configure terminal 
+Router(config)#router ospf 1
+Router(config-router)#ex
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#ip ospf 1 area 1
+Router(config-if)#ex
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)#ip ospf 1 area 1
+```
+Настройка R3
+
+```
+Router#configure terminal 
+Router(config)#router ospf 1
+Router(config-router)#ex
+Router(config)#router ospf 2
+Router(config-router)#ex
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)#ip ospf 1 area 1
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#ip ospf 2 area 0
+Router(config-if)#ex
+```
+## Скриншоты 
+
+#R1
+
+```
+show ip ospf
+```
+
+# ![images3]()
+
+
+```
+show ip ospf neighbor
+```
+
+# ![images4]()
+
+```
+show ip ospf database
+```
+
+# ![images5]()
+
+```show ip route ospf
+```
+
+# ![images6]()
+
+#R2
+
+```
+show ip ospf
+```
+
+# ![images7]()
+
+
+```
+show ip ospf neighbor
+```
+
+# ![images8]()
+
+```
+show ip ospf database
+```
+
+# ![images9]()
+
+```
+show ip route ospf
+```
+
+# ![images10]()
+
+#R3
+
+```
+show ip ospf
+```
+
+# ![images11]()
+
+
+```
+show ip ospf neighbor
+```
+
+# ![images12]()
+
+```
+show ip ospf database
+```
+
+# ![images13]()
+
+```
+show ip route ospf
+```
+
+# ![images14]()
+
+[Скачать файл2.pkt]()
+
+Проблема заключается в том, что зона 0 разорвана по середине и не возможна передача моршрутной инофрмации. Срабатывыает защита от неоптимальной маршутизации. Что бы решить эту проблему, можно поднять виртульный канал. 
+
+
 ### Задание 3.
  
 1) Найдите в интернете несколько серверов looking glass. В текстовом файле приложите ссылки 
@@ -80,6 +281,32 @@
 *В ответе прикрепите скриншот вывода информации и в свободной форме опишите, что вы видите в выводе.*
  
 ---
+
+# Ответ
+
+1) 
+
+- www.bgp4.as
+ 
+- www.iptp.net
+
+- vdscom.ru
+
+2) 
+# ![images15]()
+
+- Версия интернет демона 
+- router-id
+- AS номер 8631
+- Timezone
+- номер префикса
+- Общее колличество соседей 
+
+3)Информация о соседе  
+
+# ![images16]()
+Информация типовая 
+только разные префиксы  
  
 ### Правила приема домашнего задания
  
