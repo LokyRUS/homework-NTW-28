@@ -61,7 +61,26 @@
 |Hub|Fa0|
 
 
-Настройка Port `security`
+# Настройка Port `security`
+
+```
+Switch#conf terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface fastEthernet 0/1
+Switch(config-if)#switchport port-security 
+Command rejected: FastEthernet0/1 is a dynamic port.
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport port-security 
+Switch(config-if)#switchport port-security mac-address sticky 
+Switch(config-if)#switchport port-security maximum 3
+Switch(config-if)#switchport port-security aging time 20
+Switch(config-if)#switchport port-security violation restrict 
+Switch(config-if)#ex
+Switch(config)#ex
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+```
+
 ### Задание 2. 
 
 Для отдела мониторинга необходимо настроить view monitoring, в котором можно будет делать следующие операции:
