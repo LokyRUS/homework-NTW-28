@@ -45,12 +45,11 @@
 # ![images1]()
 № создана тоолпогия 
 
-|Хосты|Header2|Header3|
-|Легитимный хост| --- | --- |
-| KtubnbPC1 | is a | table |
+|Header1|Header2|Header3|
+| --- | --- | --- |
+| This | is a | table |
 | This | is 2nd | row |
-| This | is 3rd | row |
-|Нелегитимный хост| --- | --- |
+| This | is 3rd | row 
 
 ### Задание 2. 
 
