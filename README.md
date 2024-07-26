@@ -50,7 +50,8 @@
 | This | is a | table |
 | This | is 2nd | row |
 | This | is 3rd | row 
-
+|Header1|Header2|Header3|
+| --- | --- | --- |
 ### Задание 2. 
 
 Для отдела мониторинга необходимо настроить view monitoring, в котором можно будет делать следующие операции:
