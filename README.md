@@ -80,6 +80,30 @@ Switch(config)#ex
 Switch#
 %SYS-5-CONFIG_I: Configured from console by console
 ```
+Настройка `vlan 1` интерфейса для `ping`
+```
+Switch(config)#interface vlan 1
+Switch(config-if)#ip address 192.168.0.1 255.255.255.0
+Switch(config-if)#no shutdown 
+```
+# проверка Работоспособности 
+`Этап1`
+`Произведем `ping`Легитимными хостами`
+
+`PC1-192.168.0.10`
+# ![images2]()
+
+`PC2-192.168.0.20`
+# ![images3]()
+
+`PC3-192.168.0.30`
+# ![images4]()
+## подключим нелигитиный зост  и произведем `ping`
+`PC3-192.168.0.40` - `пинг блокируется и пакеты отбраываются`
+# ![images5]()
+
+## В mac-таблице присутствуют только легитимные мак-адреса 
+# ![images6]()
 
 ### Задание 2. 
 
