@@ -146,7 +146,7 @@ Router#%PARSER-6-VIEW_SWITCH: successfully set to view 'TEST'.
 ```
 # ![images7](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/7.PNG)
 
-# [Файл для скачивания]()
+# [Файл для скачивания](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie2.pkt)
 
 ### Правила приема домашнего задания
 
