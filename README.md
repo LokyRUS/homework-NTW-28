@@ -40,7 +40,7 @@
 *Отправьте список команд.*
 # Ответ
 
-# [Файл для скачивания]()
+# [Файл для скачивания](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie1.pkt)
 
 # ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 ### Cозданная тополопогия 
