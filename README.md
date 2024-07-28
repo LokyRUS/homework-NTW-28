@@ -115,6 +115,39 @@ Switch(config-if)#no shutdown
 
 *Отправьте конфигурацию parser view monitoring.*
 
+# Ответ
+
+```
+Enter configuration commands, one per line.  End with CNTL/Z.Router(config)#
+Router(config)#aaa new-model
+Router(config)#enable secret cisco
+Router(config)#ex
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+Router#enable view
+Password: cisco
+Router#%PARSER-6-VIEW_SWITCH: successfully set to view 'root'.
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#parser view TEST
+Router(config-view)#%PARSER-6-VIEW_CREATED: view 'TEST' successfully created.
+Router(config-view)#secret cisco
+Router(config-view)#commands exec include show arp
+Router(config-view)#commands exec include show mac-address-table
+Router(config-view)#commands exec include show logging
+Router(config-view)#commands exec include show running-config
+Router(config-view)#ex
+Router(config)#ex
+
+Router#enable view
+Router#enable view TEST
+Password: Cisco
+Router#%PARSER-6-VIEW_SWITCH: successfully set to view 'TEST'.
+```
+# ![images7]()
+
+# [Файл для скачивания]()
+
 ### Правила приема домашнего задания
 
 В личном кабинете отправлена ссылка на документ (Google Doc) с выполненным заданием. В документе настроены права доступа “Просматривать могут все в Интернете, у кого есть ссылка”.
