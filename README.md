@@ -42,7 +42,7 @@
 
 # [Файл для скачивания]()
 
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 ### Cозданная тополопогия 
 
 |Легитимные хосты|ip|mac address|port хаба|
@@ -91,19 +91,19 @@ Switch(config-if)#no shutdown
 `Произведем `ping`Легитимными хостами`
 
 `PC1-192.168.0.10`
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 `PC2-192.168.0.20`
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
 `PC3-192.168.0.30`
-# ![images4]()
+# ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 ## подключим нелигитиный зост  и произведем `ping`
 `PC3-192.168.0.40` - `пинг блокируется и пакеты отбраываются`
-# ![images5]()
+# ![images5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
 
 ## В mac-таблице присутствуют только легитимные мак-адреса 
-# ![images6]()
+# ![images6](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/6.PNG)
 
 ### Задание 2. 
 
@@ -144,7 +144,7 @@ Router#enable view TEST
 Password: Cisco
 Router#%PARSER-6-VIEW_SWITCH: successfully set to view 'TEST'.
 ```
-# ![images7]()
+# ![images7](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/7.PNG)
 
 # [Файл для скачивания]()
 
