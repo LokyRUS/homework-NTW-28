@@ -252,7 +252,26 @@ Client9 получает адрес по DHCP, Client10 ip адрес задан
 
 *Перечислите список команд, которые необходимо применить на SW2*
 
+# Ответ
 
+`SW2`
+- Настройка ARP Inspection и IP Source guard 
+```console
+Switch>enable 
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#ip arp inspection vlan 10
+Switch(config)#interface GigabitEthernet0/0
+Switch(config-if)#ip arp inspection trust
+Switch(config-if)#exit
+Switch(config)#interface GigabitEthernet0/1
+Switch(config-if)#ip arp inspection trust
+Switch(config-if)#exit
+Switch(config)#interface GigabitEthernet0/2
+Switch(config-if)#ip arp inspection trust
+Switch(config-if)#exit
+
+```
 ### Правила приема домашнего задания
 
 В личном кабинете отправлена ссылка на документ (Google Doc) с выполненным заданием. В документе настроены права доступа “Просматривать могут все в Интернете, у кого есть ссылка”.
