@@ -126,7 +126,7 @@ Switch(config-if)#exit
 
 ## Построенная топология в CPT
 # ![image 2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
-# [скачать файл.pkt]()
+# [скачать файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/domashka1-2.pkt)
 
 ## ! Настройки описываются в соответсвии с топологией из условий задания, но на основе работающей топологии из CPT. ( Наименование интерфейсов будут со скрина из условий)
 
