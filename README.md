@@ -78,7 +78,7 @@ Router(config)#
 Switch>enable 
 Switch#configure terminal 
 Enter configuration commands, one per line.  End with CNTL/Z.
-Switch(config)#ip dhcp snooping 
+Switch(config)#ip dhcp snooping vlan1
 Switch(config)#interface GigabitEthernet1/1
 Switch(config-if)#ip dhcp snooping trust
 Switch(config-if)#no ip dhcp snooping information option 
@@ -91,7 +91,7 @@ Switch(config)#ex
 Switch>enable 
 Switch#configure terminal 
 Enter configuration commands, one per line.  End with CNTL/Z.
-Switch(config)#ip dhcp snooping 
+Switch(config)#ip dhcp snooping vlan1
 Switch(config)#interface GigabitEthernet0/0
 Switch(config-if)#ip dhcp snooping trust
 Switch(config-if)#no ip dhcp snooping information option 
@@ -103,7 +103,7 @@ Switch(config-if)#exit
 Switch>enable 
 Switch#configure terminal 
 Enter configuration commands, one per line.  End with CNTL/Z.
-Switch(config)#ip dhcp snooping 
+Switch(config)#ip dhcp snooping vlan1
 Switch(config)#interface GigabitEthernet0/2
 Switch(config-if)#ip dhcp snooping trust
 Switch(config-if)#no ip dhcp snooping information option 
@@ -115,7 +115,7 @@ Switch(config-if)#exit
 Switch>enable 
 Switch#configure terminal 
 Enter configuration commands, one per line.  End with CNTL/Z.
-Switch(config)#ip dhcp snooping 
+Switch(config)#ip dhcp snooping vlan1
 Switch(config)#interface GigabitEthernet0/1
 Switch(config-if)#ip dhcp snooping trust
 Switch(config-if)#no ip dhcp snooping information option 
@@ -171,7 +171,7 @@ Router(config)#
 Switch>enable 
 Switch#configure terminal 
 Enter configuration commands, one per line.  End with CNTL/Z.
-Switch(config)#ip dhcp snooping 
+Switch(config)#ip dhcp snooping vlan1
 Switch(config)#interface GigabitEthernet0/0
 Switch(config-if)#ip dhcp snooping trust 
 Switch(config-if)#exit
@@ -187,7 +187,7 @@ Switch(config)#ex
 Switch>enable 
 Switch#configure terminal 
 Enter configuration commands, one per line.  End with CNTL/Z.
-Switch(config)#ip dhcp snooping 
+Switch(config)#ip dhcp snooping vlan1
 Switch(config)#interface GigabitEthernet0/0
 Switch(config-if)#ip dhcp snooping trust 
 Switch(config-if)#exit
@@ -208,7 +208,7 @@ Switch(config-if)#exit
 Switch>enable 
 Switch#configure terminal 
 Enter configuration commands, one per line.  End with CNTL/Z.
-Switch(config)#ip dhcp snooping 
+Switch(config)#ip dhcp snooping vlan1
 Switch(config)#interface GigabitEthernet0/2
 Switch(config-if)#ip dhcp snooping trust 
 Switch(config-if)#exit
@@ -229,7 +229,7 @@ Switch(config-if)#exit
 Switch>enable 
 Switch#configure terminal 
 Enter configuration commands, one per line.  End with CNTL/Z.
-Switch(config)#ip dhcp snooping 
+Switch(config)#ip dhcp snooping vlan1
 Switch(config)#interface GigabitEthernet0/1
 Switch(config-if)#ip dhcp snooping trust 
 Switch(config-if)#exit
