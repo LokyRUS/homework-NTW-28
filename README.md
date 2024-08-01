@@ -29,8 +29,101 @@
 
 ------
 # Ответ
+
+# вариант №1 решения без опции 82
 ## Построенная топология в CPT
 # ![image 1]()
+# [скачать файл.pkt]()
+
+## ! Настройки описываются в соответсвии с топологией из условий задания, но на основе работающей топологии из CPT. ( Наименование интерфейсов будут со скрина из условий)
+
+### 1. Настройка DHCP сервера `R1`
+
+```console
+Router#configure terminal
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#ip address 192.168.0.1 255.255.255.0
+Router(config-if)#exit
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#no shutdown
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+Router(config)#ip dhcp pool IPD
+Router(dhcp-config)#network 192.168.0.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.0.1
+Router(config)#ip dhcp excluded-address 192.168.0.1 192.168.0.10
+Router(config)#
+```
+### 2. Настройка ложного DHCP сервера `R2`
+```console
+Router#configure terminal
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#ip address 192.168.100.1 255.255.255.0
+Router(config-if)#exit
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#no shutdown
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+Router(config)#ip dhcp pool IPD
+Router(dhcp-config)#network 192.168.100.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.100.1
+Router(config)#ip dhcp excluded-address 192.168.100.1 192.168.100.10
+Router(config)#
+```
+## Вклучение `ip dhcp snooping` и перевод портов в `Trust` и в `Trust limit rate 10`
+
+`SW1`
+- Trust
+```console
+Switch>enable 
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#ip dhcp snooping 
+Switch(config)#interface GigabitEthernet1/1
+Switch(config-if)#ip dhcp snooping trust
+Switch(config-if)#no ip dhcp snooping information option 
+Switch(config-if)#exit
+Switch(config)#ex
+```
+`SW2`
+- Trust
+```console
+Switch>enable 
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#ip dhcp snooping 
+Switch(config)#interface GigabitEthernet0/0
+Switch(config-if)#ip dhcp snooping trust
+Switch(config-if)#no ip dhcp snooping information option 
+Switch(config-if)#exit
+```
+`SW3`
+- Trust
+```console
+Switch>enable 
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#ip dhcp snooping 
+Switch(config)#interface GigabitEthernet0/2
+Switch(config-if)#ip dhcp snooping trust
+Switch(config-if)#no ip dhcp snooping information option 
+Switch(config-if)#exit
+```
+`SW4`
+- Trust
+```console
+Switch>enable 
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#ip dhcp snooping 
+Switch(config)#interface GigabitEthernet0/1
+Switch(config-if)#ip dhcp snooping trust
+Switch(config-if)#no ip dhcp snooping information option 
+Switch(config-if)#exit
+```
+
+## Построенная топология в CPT
+# ![image 2]()
 # [скачать файл.pkt]()
 
 ## ! Настройки описываются в соответсвии с топологией из условий задания, но на основе работающей топологии из CPT. ( Наименование интерфейсов будут со скрина из условий)
