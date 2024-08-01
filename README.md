@@ -36,7 +36,8 @@
 ## ! Настройки описываются в соответсвии с топологией из условий задания, но на основе работающей топологии из CPT. ( Наименование интерфейсов будут со скрина из условий)
 
 ### 1. Настройка DHCP сервера `R1`
-```concole
+
+```console
 Router#configure terminal
 Router(config)#interface GigabitEthernet0/0
 Router(config-if)#ip address 192.168.0.1 255.255.255.0
@@ -67,10 +68,11 @@ Router(dhcp-config)#default-router 192.168.100.1
 Router(config)#ip dhcp excluded-address 192.168.100.1 192.168.100.10
 Router(config)#
 ```
-## Вклучение `ip dhcp snooping` и перевод портов в `Trust` 
+## Вклучение `ip dhcp snooping` и перевод портов в `Trust` и в `Trust limit rate 10`
 
 `SW1`
-```consloe
+- Trust
+```console
 Switch>enable 
 Switch#configure terminal 
 Enter configuration commands, one per line.  End with CNTL/Z.
@@ -83,8 +85,23 @@ Switch(config)#interface GigabitEthernet1/1
 Switch(config-if)#ip dhcp snooping trust 
 Switch(config-if)#exit
 Switch(config)#ex
-
 ```
+`SW2`
+```console
+Switch>enable 
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#ip dhcp snooping 
+Switch(config)#interface GigabitEthernet0/0
+Switch(config-if)#ip dhcp snooping trust 
+Switch(config-if)#exit
+Switch(config)#ex
+Switch(config)#interface GigabitEthernet1/1
+Switch(config-if)#ip dhcp snooping trust 
+Switch(config-if)#exit
+Switch(config)#ex
+```
+
 ### Задание 2. 
 
 По топологии из задания 1 необходимо на SW2 настроить ARP Inspection и IP Source guard для Client9 и Client10, подключенных к SW2.
