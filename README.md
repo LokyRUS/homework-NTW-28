@@ -30,7 +30,7 @@
 ------
 # Ответ
 
-# вариант №1 решения без опции 82
+# Вариант №1 решения без опции 82
 ## Построенная топология в CPT
 # ![image 1]()
 # [скачать файл.pkt]()
@@ -121,6 +121,8 @@ Switch(config-if)#ip dhcp snooping trust
 Switch(config-if)#no ip dhcp snooping information option 
 Switch(config-if)#exit
 ```
+
+# Вариант №2 решения с включенной опцией 82
 
 ## Построенная топология в CPT
 # ![image 2]()
