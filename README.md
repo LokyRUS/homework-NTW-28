@@ -270,7 +270,11 @@ Switch(config-if)#exit
 Switch(config)#interface GigabitEthernet0/2
 Switch(config-if)#ip arp inspection trust
 Switch(config-if)#exit
-
+Switch(config)#interface  GigabitEthernet0/1
+Switch(config-if)#ip verify source
+Switch(config-if)#exit
+Switch(config)#ip source binding 0050.7966.6809 vlan 10 192.168.0.13
+interface GigabitEthernet0/1
 ```
 ### Правила приема домашнего задания
 
