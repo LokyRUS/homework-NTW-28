@@ -87,6 +87,7 @@ Switch(config-if)#exit
 Switch(config)#ex
 ```
 `SW2`
+- Trust
 ```console
 Switch>enable 
 Switch#configure terminal 
@@ -95,11 +96,16 @@ Switch(config)#ip dhcp snooping
 Switch(config)#interface GigabitEthernet0/0
 Switch(config-if)#ip dhcp snooping trust 
 Switch(config-if)#exit
+```
+- Trust limit rate 10
+
+```console
 Switch(config)#ex
-Switch(config)#interface GigabitEthernet1/1
+Switch(config)#interface GigabitEthernet1/0
 Switch(config-if)#ip dhcp snooping trust 
+Switch(config-if)#ip dhcp snooping limit rate 10
 Switch(config-if)#exit
-Switch(config)#ex
+
 ```
 
 ### Задание 2. 
