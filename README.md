@@ -11,20 +11,6 @@
 
 ------
 
-### Инструкция к выполнению домашнего задания
-
-1. Скачайте [Шаблон для домашнего задания](https://u.netology.ru/backend/uploads/lms/content_assets/file/281/%D0%A1%D0%94%D0%95%D0%9B%D0%90%D0%99%D0%A2%D0%95_%D0%9A%D0%9E%D0%9F%D0%98%D0%AE_-_%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%B4%D0%BB%D1%8F_%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B5%D0%B3%D0%BE_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F_1.1._%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8_-_%D0%A4%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F_%D0%98%D0%BC%D1%8F.docx) на своё устройство.
-2. Откройте скачанный файл на личном диске в Google.
-3. В названии файла введите корректное название лекции и ваши фамилию и имя.
-4. Зайдите в «Настройки доступа» и выберите доступ «Просматривать могут все в интернете, у кого есть ссылка». Инструкция «Как предоставить доступ к файлам и папкам на Google Диске» [по ссылке](https://support.google.com/docs/answer/2494822?hl=ru&co=GENIE.Platform%3DDesktop).
-5. Скопируйте текст задания в свой документ.
-6. Выполните задание, запишите ответы и приложите необходимые скриншоты в свой Google-документ.
-7. Для проверки домашнего задания отправьте ссылку на ваш Google-документ в личном кабинете.
-8. Любые вопросы по решению задач можно задать в чате учебной группы, в чате поддержки или в разделе «Вопросы по заданию» в личном кабинете.
-9. Подробнее о работе с Google-документами и загрузке решения на проверку можно найти в [«Руководстве по работе с материалами для обучения»](https://l.netology.ru/instruktsiya-po-materialami-dlya-obucheniya)
-
----
-
 ### Лабораторная работа "Конфигурация DHCP Snooping и ARP Inspection"
 
 Можете использовать симулятор для построения топологии и проверки/поиска ответов на задания. 
@@ -42,6 +28,45 @@
 *Перечислите список свитчей и список команд, которые необходимо выполнить.*
 
 ------
+# Ответ
+## Построенная топология в CPT
+# ![image 1]()
+# [скачать файл.pkt]()
+
+## ! Настройки описываются в соответсвии с топологией из условий задания, но на основе работающей топологии из CPT. ( Наименование интерфейсов будут со скрина из условий)
+
+### 1. Настройка DHCP сервера `R1`
+```
+Router#configure terminal
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#ip address 192.168.0.1 255.255.255.0
+Router(config-if)#exit
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#no shutdown
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+Router(config)#ip dhcp pool IPD
+Router(dhcp-config)#network 192.168.0.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.0.1
+Router(config)#ip dhcp excluded-address 192.168.0.1 192.168.0.10
+Router(config)#
+```
+### 2. Настройка ложного DHCP сервера `R2`
+```
+Router#configure terminal
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#ip address 192.168.100.1 255.255.255.0
+Router(config-if)#exit
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#no shutdown
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+Router(config)#ip dhcp pool IPD
+Router(dhcp-config)#network 192.168.100.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.100.1
+Router(config)#ip dhcp excluded-address 192.168.100.1 192.168.100.10
+Router(config)#
+```
 
 ### Задание 2. 
 
