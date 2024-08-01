@@ -69,16 +69,21 @@ Router(config)#
 ```
 ## Вклучение `ip dhcp snooping` и перевод портов в `Trust` 
 
-```
+`SW1`
+```consloe
 Switch>enable 
 Switch#configure terminal 
 Enter configuration commands, one per line.  End with CNTL/Z.
 Switch(config)#ip dhcp snooping 
-Switch(config)#interface fastEthernet 0/3
+Switch(config)#interface GigabitEthernet0/0
 Switch(config-if)#ip dhcp snooping trust 
 Switch(config-if)#exit
 Switch(config)#ex
-Switch#
+Switch(config)#interface GigabitEthernet1/1
+Switch(config-if)#ip dhcp snooping trust 
+Switch(config-if)#exit
+Switch(config)#ex
+
 ```
 ### Задание 2. 
 
