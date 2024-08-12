@@ -79,6 +79,223 @@ ISAKMP(Ikev1) Phase 1 протоколы:
 *Отправьте полный список конфигураций и политик. Требуется, чтоб все три туннеля могли работать одновременно.*
 
 ------
+# Ответ 
+
+# Общая топология сети 
+
+# ![images1]()
+
+
+# [Скачать Файл.pkt]()
+
+# настройка динамической маршрутизации `OSPF`
+
+`R1`
+
+```
+R1#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#router ospf 1
+R1(config)#interface gigabitEthernet 0/0/0
+R1(config-if)#ip ospf 1 area 0
+R1(config)#interface gigabitEthernet 0/0/1
+R1(config-if)#ip ospf 1 area 0
+R1(config-if)#
+```
+`R2`
+
+```
+R2#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#router ospf 1
+R2(config)#interface gigabitEthernet 0/0/0
+R2(config-if)#ip ospf 1 area 0
+R2(config)#interface gigabitEthernet 0/0/1
+R2(config-if)#ip ospf 1 area 0
+R2(config-if)#
+```
+`R3`
+
+```
+R3#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+R3(config)#router ospf 1
+R3(config)#interface gigabitEthernet 0/0/0
+R3(config-if)#ip ospf 1 area 0
+R3(config)#interface gigabitEthernet 0/0/1
+R3(config-if)#ip ospf 1 area 0
+R3(config-if)#
+```
+# Cоздание туннелей между каждым офисом
+# R1-R2
+
+`R1`
+```
+R1(config)#access-list 110 permit ip 192.168.5.0 0.0.0.255 172.16.1.0 0.0.0.255
+R1(config)#crypto isakmp policy 10
+R1(config-isakmp)#encryption 3des 
+R1(config-isakmp)#authentication pre-share 
+R1(config-isakmp)#hash md5
+R1(config-isakmp)#group 2
+R1(config-isakmp)#Lifetime 3600
+R1(config-isakmp)#ex
+R1(config)#crypto isakmp key cisco address 100.0.0.2
+R1(config)#crypto ipsec  transform-set VPN-SET ah-md5-hmac esp-3des
+R1(config)#crypto map VPN-MAP 10 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R1(config-crypto-map)#description VPN connection to R2
+R1(config-crypto-map)#set peer 100.0.0.2
+R1(config-crypto-map)#set transform-set VPN-SET
+R1(config-crypto-map)#match address 110
+R1(config-crypto-map)#ex
+R1(config)#interface gigabitEthernet 0/0/0
+R2(config-if)#crypto map VPN-MAP
+```
+`R2`
+
+```
+R2(config)#access-list 110 permit ip 172.16.1.0 0.0.0.255 192.168.0.0 0.0.0.255
+R2(config)#crypto isakmp policy 10
+R2(config-isakmp)#encryption 3des 
+R2(config-isakmp)#authentication pre-share 
+R2(config-isakmp)#hash md5
+R2(config-isakmp)#group 2
+R2(config-isakmp)#Lifetime 3600
+R2(config-isakmp)#ex
+R2(config)#crypto isakmp key cisco address 100.0.0.2
+R2(config)#crypto ipsec  transform-set VPN-SET ah-md5-hmac esp-3des
+R2(config)#crypto map VPN-MAP 10 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R2(config-crypto-map)#description VPN connection to R2
+R2(config-crypto-map)#set peer 100.0.0.1
+R2(config-crypto-map)#set transform-set VPN-SET
+R2(config-crypto-map)#match address 110
+R2(config-crypto-map)#ex
+R2(config)#interface gigabitEthernet 0/0/0
+R2(config-if)#crypto map VPN-MAP
+```
+*До отправки пакета по маршруту R1-R2*
+# ![images2]()
+*После отправки пакета по маршруту R1-R2*
+# ![images3]()
+
+
+## R2-R3
+
+`R2`
+
+```
+R2(config)#crypto isakmp policy 20
+R2(config-isakmp)#encryption aes 256 
+R2(config-isakmp)#authentication pre-share 
+R2(config-isakmp)#hash sha
+R2(config-isakmp)#group 5
+R2(config-isakmp)#Lifetime 3600
+R2(config-isakmp)#ex
+R2(config)#ip access-list extended VPN-R3
+R2(config-ext-nacl)#permit ip 172.16.1.0 0.0.0.255 10.10.10.0 0.0.0.255
+R2(config-ext-nacl)#ex
+R2(config)#crypto isakmp key cisco2 address 100.0.0.3
+R2(config)#crypto ipsec transform-set VPN-SET2 esp-aes esp-sha-hmac
+R2(config)#crypto map VPN-MAP 20 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R2(config-crypto-map)#description VPN connection to R2
+R2(config-crypto-map)#set peer 100.0.0.3
+R2(config-crypto-map)#set transform-set VPN-SET2
+R2(config-crypto-map)#match address 110
+R2(config-crypto-map)#ex
+```
+`R3` 
+
+```
+R3(config)#crypto isakmp policy 10
+R3(config-isakmp)#encryption aes 256 
+R3(config-isakmp)#authentication pre-share 
+R3(config-isakmp)#hash sha
+R3(config-isakmp)#group 5
+R3(config-isakmp)#Lifetime 3600
+R3(config-isakmp)#ex
+R3(config)#ip access-list extended VPN-R3
+R3(config-ext-nacl)#permit ip 10.10.10.0 0.0.0.255 172.16.1.0 0.0.0.255
+R3(config-ext-nacl)#ex
+R3(config)#crypto isakmp key cisco2 address 100.0.0.2
+R3(config)#crypto ipsec transform-set VPN-SET2 esp-aes esp-sha-hmac
+R3(config)#crypto map VPN-MAP 20 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R3(config-crypto-map)#description VPN connection to R2
+R3(config-crypto-map)#set peer 100.0.0.2
+R3(config-crypto-map)#set transform-set VPN-SET2
+R3(config-crypto-map)#match address VPN-R3
+R3(config-crypto-map)#ex
+R3(config)#interface gigabitEthernet 0/0/0
+R3(config-if)#crypto map VPN-MAP
+
+```
+*До отправки пакета по маршруту R2-R3*
+# ![images4]()
+*После отправки пакета по маршруту R2-R3*
+# ![images5]()
+
+## R3-R1
+
+`R3`
+
+```
+R3(config)#crypto isakmp policy 20
+R3(config-isakmp)#encryption aes 256 
+R3(config-isakmp)#authentication pre-share 
+R3(config-isakmp)#hash sha
+R3(config-isakmp)#group 5
+R3(config-isakmp)#Lifetime 3600
+R3(config-isakmp)#ex
+R3(config)#ip access-list extended VPN-R1
+R3(config-ext-nacl)#permit ip 10.10.10.0 0.0.0.255 192.168.5.0 0.0.0.255
+R3(config-ext-nacl)#ex
+R3(config)#crypto isakmp key cisco3 address 100.0.0.1
+R3(config)#crypto ipsec transform-set VPN-SET1 esp-aes esp-sha-hmac
+R3(config)#crypto map VPN-MAP 20 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R3(config-crypto-map)#description VPN connection to R1
+R3(config-crypto-map)#set peer 100.0.0.1
+R3(config-crypto-map)#set transform-set VPN-SET1
+R3(config-crypto-map)#match address VPN-R1
+R3(config-crypto-map)#ex
+```
+`R1`
+ 
+```
+R1(config)#crypto isakmp policy 20
+R1(config-isakmp)#encryption aes 256 
+R1(config-isakmp)#authentication pre-share 
+R1(config-isakmp)#hash sha
+R1(config-isakmp)#group 5
+R1(config-isakmp)#Lifetime 3600
+R1(config-isakmp)#ex
+R1(config)#ip access-list extended VPN-R3
+R1(config-ext-nacl)#permit ip 192.168.5.0 0.0.0.255 10.10.10.0 0.0.0.255
+R1(config-ext-nacl)#ex
+R1(config)#crypto isakmp key cisco3 address 100.0.0.3
+R1(config)#crypto ipsec transform-set VPN-SET3 esp-aes esp-sha-hmac
+R1(config)#crypto map VPN-MAP 20 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R1(config-crypto-map)#description VPN connection to R3
+R1(config-crypto-map)#set peer 100.0.0.3
+R1(config-crypto-map)#set transform-set VPN-SET3
+R1(config-crypto-map)#match address VPN-R3
+R1(config-crypto-map)#ex
+```
+*До отправки пакета по маршруту R3-R1*
+# ![images6]()
+*После отправки пакета по маршруту R3-R1*
+# ![images7]()
+
+
 
 ### Задание 2. 
 
