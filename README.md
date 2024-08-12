@@ -306,6 +306,130 @@ R1(config-crypto-map)#ex
 
 *Отправьте список маршрутизаторов со списком команд, необходимых для выполнения.*
 
+# Ответ 
+# [Скачать Файл.pkt]()
+
+# Создание loopback 0 
+
+`R1`
+
+```
+R1#configure terminal 
+R1(config)#interface loopback 0
+R1(config-if)#ip address 1.1.1.1 255.255.255.255
+```
+
+`R2`
+
+```
+R2#configure terminal 
+R2(config)#interface loopback 0
+R2(config-if)#ip address 2.2.2.2 255.255.255.255
+```
+`R3`
+
+```
+R3#configure terminal 
+R3(config)#interface loopback 0
+R3(config-if)#ip address 3.3.3.3 255.255.255.255
+```
+
+# Настройка тунеля с маршрутизацией.
+
+## R1-R2
+
+`R1`
+
+```
+R1#configure terminal 
+R1(config)#interface tunnel 0
+R1(config-if)#ip address 10.1.1.1 255.255.255.0
+R1(config-if)#tunnel source loopback 0
+R1(config-if)#tunnel destination 2.2.2.2
+R1(config-if)#ex
+R1(config)#
+R1(config)#ip route 2.2.2.2 255.255.255.255 100.0.0.2
+R1(config)# ip route 172.16.1.0 255.255.255.0 2.2.2.2
+R1(config)#
+```
+`R2`
+
+```
+R2#configure terminal 
+R2(config)#interface tunnel 0
+R2(config-if)#ip address 10.1.1.2 255.255.255.0
+R2(config-if)#tunnel source loopback 0
+R2(config-if)#tunnel destination 1.1.1.1
+R2(config-if)#ex
+R2(config)#
+R2(config)#ip route 1.1.1.1 255.255.255.255 100.0.0.1
+R2(config)# ip route 192.168.5.0 255.255.255.0 1.1.1.1
+R2(config)#
+```
+
+
+## R2-R3
+
+`R2`
+
+```
+R2#configure terminal 
+R2(config)#interface tunnel 1
+R2(config-if)#ip address 10.1.2.1 255.255.255.0
+R2(config-if)#tunnel source loopback 0
+R2(config-if)#tunnel destination 3.3.3.3
+R2(config-if)#ex
+R2(config)#
+R2(config)#ip route 3.3.3.3 255.255.255.255 100.0.0.3
+R2(config)# ip route 10.10.10.0 255.255.255.0 3.3.3.3
+R2(config)#
+```
+`R3`
+
+```
+R3#configure terminal 
+R3(config)#interface tunnel 1
+R3(config-if)#ip address 10.1.2.2 255.255.255.0
+R3(config-if)#tunnel source loopback 0
+R3(config-if)#tunnel destination 2.2.2.2
+R3(config-if)#ex
+R3(config)#
+R3(config)#ip route 2.2.2.2 255.255.255.255 100.0.0.2
+R3(config)# ip route 172.16.1.0 255.255.255.0 2.2.2.2
+R3(config)#
+```
+## R3-R1
+
+`R3`
+
+```
+R3#configure terminal 
+R3(config)#interface tunnel 2
+R3(config-if)#ip address 10.1.3.1 255.255.255.0
+R3(config-if)#tunnel source loopback 0
+R3(config-if)#tunnel destination 1.1.1.1
+R3(config-if)#ex
+R3(config)#
+R3(config)#ip route 1.1.1.1 255.255.255.255 100.0.0.1
+R3(config)# ip route 192.168.5.0 255.255.255.0 1.1.1.1
+R3(config)#
+```
+`R1`
+
+```
+R1#configure terminal 
+R1(config)#interface tunnel 2
+R1(config-if)#ip address 10.1.3.2 255.255.255.0
+R1(config-if)#tunnel source loopback 0
+R1(config-if)#tunnel destination 3.3.3.3
+R1(config-if)#ex
+R1(config)#
+R1(config)#ip route 3.3.3.3 255.255.255.255 100.0.0.3
+R1(config)# ip route 10.10.10.0 255.255.255.0 3.3.3.3
+R1(config)#
+```
+
+
 
 ### Правила приема домашнего задания
 
