@@ -83,10 +83,10 @@ ISAKMP(Ikev1) Phase 1 протоколы:
 
 # Общая топология сети 
 
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 
-# [Скачать Файл.pkt]()
+# [Скачать Файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie1.pkt)
 
 # настройка динамической маршрутизации `OSPF`
 
@@ -177,9 +177,9 @@ R2(config)#interface gigabitEthernet 0/0/0
 R2(config-if)#crypto map VPN-MAP
 ```
 *До отправки пакета по маршруту R1-R2*
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 *После отправки пакета по маршруту R1-R2*
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
 
 ## R2-R3
@@ -236,9 +236,9 @@ R3(config-if)#crypto map VPN-MAP
 
 ```
 *До отправки пакета по маршруту R2-R3*
-# ![images4]()
+# ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 *После отправки пакета по маршруту R2-R3*
-# ![images5]()
+# ![images5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
 
 ## R3-R1
 
@@ -291,9 +291,9 @@ R1(config-crypto-map)#match address VPN-R3
 R1(config-crypto-map)#ex
 ```
 *До отправки пакета по маршруту R3-R1*
-# ![images6]()
+# ![images6](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/6.PNG)
 *После отправки пакета по маршруту R3-R1*
-# ![images7]()
+# ![images7](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/7.PNG)
 
 
 
@@ -307,7 +307,7 @@ R1(config-crypto-map)#ex
 *Отправьте список маршрутизаторов со списком команд, необходимых для выполнения.*
 
 # Ответ 
-# [Скачать Файл.pkt]()
+# [Скачать Файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie2.pkt)
 
 # Создание loopback 0 
 
