@@ -36,7 +36,7 @@
 # Ответ
 `Топология`
 ![](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/1.PNG)
-[Скачать файл.pkt]()
+[Скачать файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie1.pkt)
 
 ## Дополнительные задания (со звездочкой*)
 
