@@ -26,6 +26,160 @@
 *Отправьте готовый файл pkt*
 
 ---
+# Ответ
+
+# Разделение на VLAN
+
+|VLAN| name |network|прочее|
+| --- | --- | --- |---|
+| vlan10 | MGMT | 192.168.10.0/24 |контроллер , маршрутизатор, точки доступа|
+| vlan20 | WIFI_Default | 192.168.20.0/24  |AP1|
+| vlan30 | WIFI2 | 192.168.30.0/24 |AP2|
+
+# Астройка транка с виланами
+```
+Switch>enable 
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10
+Switch(config-vlan)#name MGMT 
+Switch(config-vlan)#ex
+Switch(config)#vlan 20
+Switch(config-vlan)#name WIFI_Default
+Switch(config-vlan)#ex
+Switch(config)#vlan 30
+Switch(config-vlan)#name WIFI2
+Switch(config-vlan)#ex
+Switch(config)#interface gigabitEthernet 0/1
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#switchport trunk allowed vlan 10,20,30
+Switch(config-if)#
+
+```
+# ![images 1]()
+
+# Создание сабиенрефейсов на роутере
+
+```
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#no shutdown 
+Router(config-if)#interface gigabitEthernet 0/0/0.10
+Router(config-subif)#encapsulation dot1Q 10
+Router(config-subif)#ip address 192.168.10.254 255.255.255.0
+Router(config-subif)#ex
+Router(config)#interface gigabitEthernet 0/0/0.20
+Router(config-subif)#encapsulation dot1Q 20
+Router(config-subif)#ip address 192.168.20.254 255.255.255.0
+Router(config-subif)#ex
+Router(config)#interface gigabitEthernet 0/0/0.30
+Router(config-subif)#encapsulation dot1Q 30
+Router(config-subif)#ip address 192.168.30.254 255.255.255.0
+Router(config-subif)#ex
+```
+# ![images 2]()
+
+# Назначаем порт в сторону контролера к аксесс режиме на Vlan 10
+
+```
+Switch>en
+Switch>enable 
+Switch#configure terminal 
+Switch(config)#interface fastEthernet 0/1
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#ex
+```
+# Назначаем Ip адрес контролеру 
+
+# ![images 3]()
+
+# Настраивам транк для точек доступа  для vlan 10,20,30 и назначаем netive (корневым или родным) vlan 10 (влан облуживания)
+```
+Switch#configure terminal 
+Switch(config)#interface range fastEthernet 0/2-3
+Switch(config-if-range)#switchport mode trunk 
+Switch(config-if-range)#switchport trunk allowed vlan 10,20,30
+Switch(config-if-range)#switchport trunk native vlan 10
+
+```
+
+# Настройка DHCP на роутере с настрокой опции 43 для взаидомейсвия котролера и точек доступа. 
+
+```
+Router>enable 
+Router#configure ter
+Router(config)#ip dhcp pool MGMT
+Router(dhcp-config)#network 192.168.10.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.10.254
+Router(dhcp-config)#option 43 ip 192.168.10.50
+Router(dhcp-config)#
+```
+# Настройка DHCP на роутере для wifi сетей.
+
+### Для WIFI_Default
+
+```
+ Router>enable 
+Router#configure ter
+Router(config)#ip dhcp pool WIFI_Default
+Router(dhcp-config)#network 192.168.20.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.20.254
+Router(dhcp-config)#
+```
+### Для WIFI2
+
+```
+ Router>enable 
+Router#configure ter
+Router(config)#ip dhcp pool WIFI2
+Router(dhcp-config)#network 192.168.30.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.30.254
+Router(dhcp-config)#
+```
+
+
+# ![images 4]()
+
+# ![images 5]()
+
+# Создаем беспроводные сети 
+
+### WIFI_Default
+
+# ![images 6]()
+
+### WIFI2
+
+# ![images 7]()
+
+# Создание групп 
+
+### Группа  `WIFI_Group1`
+
+# ![images 8]()
+
+### Группа  `WIFI_Group2`
+
+# ![images 9]()
+
+# подключаем смартфоны 
+
+### К сети WIFI_Default
+
+# ![images 10]()
+
+### К сети WIFI2
+
+# ![images 11]()
+
+# Получившаяся топология 
+
+# ![images 12]()
+
+# [Скачать файл.pkt]()
 
 ### Правила приема домашнего задания
 
