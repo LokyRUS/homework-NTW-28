@@ -12,7 +12,7 @@
 
 ### Лабораторная работа "Конфигурация AP Group, WLANs на Cisco WLC"
 
-<img width="900" alt="Ping_trouble" src="https://user-images.githubusercontent.com/51816695/170044506-c48a99c0-d6a4-4c3b-9a21-8741f806e04e.png">
+![](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99.PNG)
 Соберите аналогичную топологию в Cisco Packet Tracer.   
 
 Критерии выполнения:
@@ -56,7 +56,7 @@ Switch(config-if)#switchport trunk allowed vlan 10,20,30
 Switch(config-if)#
 
 ```
-# ![images 1]()
+# ![images 1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 # Создание сабинтерфейсов на роутере
 
@@ -79,7 +79,7 @@ Router(config-subif)#encapsulation dot1Q 30
 Router(config-subif)#ip address 192.168.30.254 255.255.255.0
 Router(config-subif)#ex
 ```
-# ![images 2]()
+# ![images 2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 # Назначаем порт в сторону контроллера к аксес режиме на Vlan 10
 
@@ -94,7 +94,7 @@ Switch(config-if)#ex
 ```
 # Назначаем Ip адрес контроллеру 
 
-# ![images 3]()
+# ![images 3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
 # Настраивам транк для точек доступа  для vlan 10,20,30 и назначаем netive (корневым или родным) vlan 10 (влан облуживания)
 ```
@@ -141,43 +141,43 @@ Router(dhcp-config)#
 ```
 
 
-# ![images 4]()
+# ![images 4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 
-# ![images 5]()
+# ![images 5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
 
 # Создаем беспроводные сети 
 
 ### WIFI_Default
 
-# ![images 6]()
+# ![images 6](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/6.PNG)
 
 ### WIFI2
 
-# ![images 7]()
+# ![images 7](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/7.PNG)
 
 # Создание групп 
 
 ### Группа  `WIFI_Group1`
 
-# ![images 8]()
+# ![images 8](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/8.PNG)
 
 ### Группа  `WIFI_Group2`
 
-# ![images 9]()
+# ![images 9](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/9.PNG)
 
 # подключаем смартфоны 
 
 ### К сети WIFI_Default
 
-# ![images 10]()
+# ![images 10](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/10.PNG)
 
 ### К сети WIFI2
 
-# ![images 11]()
+# ![images 11](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/11.PNG)
 
 # Получившаяся топология 
 
-# ![images 12]()
+# ![images 12](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/12.PNG)
 
 # [Скачать файл.pkt]()
 
