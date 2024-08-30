@@ -28,6 +28,8 @@
 ---
 # Ответ
 
+# [Скачать файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie.pkt)
+
 # Разделение на VLAN
 
 |VLAN| name |network|прочее|
@@ -179,7 +181,7 @@ Router(dhcp-config)#
 
 # ![images 12](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/12.PNG)
 
-# [Скачать файл.pkt]()
+# [Скачать файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie.pkt)
 
 ### Правила приема домашнего задания
 
