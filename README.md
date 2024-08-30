@@ -36,7 +36,7 @@
 | vlan20 | WIFI_Default | 192.168.20.0/24  |AP1|
 | vlan30 | WIFI2 | 192.168.30.0/24 |AP2|
 
-# Астройка транка с виланами
+# Настройка транка с вланами
 ```
 Switch>enable 
 Switch#configure terminal 
@@ -58,7 +58,7 @@ Switch(config-if)#
 ```
 # ![images 1]()
 
-# Создание сабиенрефейсов на роутере
+# Создание сабинтерфейсов на роутере
 
 ```
 Router>enable 
@@ -81,7 +81,7 @@ Router(config-subif)#ex
 ```
 # ![images 2]()
 
-# Назначаем порт в сторону контролера к аксесс режиме на Vlan 10
+# Назначаем порт в сторону контроллера к аксес режиме на Vlan 10
 
 ```
 Switch>en
@@ -92,7 +92,7 @@ Switch(config-if)#switchport mode access
 Switch(config-if)#switchport access vlan 10
 Switch(config-if)#ex
 ```
-# Назначаем Ip адрес контролеру 
+# Назначаем Ip адрес контроллеру 
 
 # ![images 3]()
 
@@ -106,7 +106,7 @@ Switch(config-if-range)#switchport trunk native vlan 10
 
 ```
 
-# Настройка DHCP на роутере с настрокой опции 43 для взаидомейсвия котролера и точек доступа. 
+# Настройка DHCP на роутере с настрокой опции 43 для взаидомейсвия контроллера и точек доступа. 
 
 ```
 Router>enable 
