@@ -121,6 +121,33 @@ ciscoasa(config-pmap-c)#inspect icmp
 ciscoasa(config-pmap-c)#ex
 ciscoasa(config)#service-policy test global
 ```
+## Или редатируем политиу по умлочанию 
+```
+ciscoasa(config)#class inspection_default
+ciscoasa(config-cmap)#match default-inspection-traffic
+ciscoasa(config-cmap)#ex
+ciscoasa(config)#policy-map global_poicy
+ciscoasa(config-pmap)#class inspection_default
+ciscoasa(config-pmap-c)#inspect http 
+ciscoasa(config-pmap-c)#inspect icmp 
+ciscoasa(config-pmap-c)#ex
+ciscoasa(config)#service-policy global_poicy global
+```
+# Разрешаем трафик icmp из INSIDE в `outside`
+```
+ciscoasa(config)# access-list 102 extended permit icmp 192.168.1.0 255.255.255.0 10.10.10.0 255.255.255.0
+```
+# Разрешаем трафик HTTP из INSIDE в DMZ
+```
+ciscoasa(config)#access-list 102 extended permit tcp 192.168.1.0 255.255.255.0 192.168.3.0 255.255.255.0 eq www
+```
+# Разрешить прохождение только ICMP-трафика из INSIDE в PRINTER
+```
+ciscoasa(config)#access-list 102 extended permit icmp 192.168.1.0 255.255.255.0 192.168.2.0 255.255.255.0
+```
+
+# ! CPT Имеет баг, который может не пропускать обратный трафик, даже при включенной политике, когда назначаются ACL листы, только на выходной interface
+
 ## Выполнение 4 пункта. Из OUTSIDE разрешить инициировать сессии в DMZ по 80 TCP порту  
 ```
 ciscoasa(config)#access-list 100 permit tcp 10.10.10.0 255.255.255.0 host 192.168.3.2 eq 80
@@ -133,8 +160,7 @@ ciscoasa(config)#access-group 100 in interface OUTSIDE
 
 - ответные трафик из PRINTER по дефолту на основании sec зон. 
 ```
-ciscoasa(config)#access-list 101 extended permit icmp host 192.168.3.2 192.168.1.0 255.255.255.0
-ciscoasa(config)#access-list 101 extended permit icmp host 192.168.3.2 10.10.10.0 255.255.255.0
+ciscoasa(config)#access-list 101 extended permit icmp 192.168.3.0 255.255.255.0 10.10.10.0 255.255.255.0
 ciscoasa(config)#access-group 101 in interface DMZ
 ```
 # ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
