@@ -144,9 +144,10 @@ ciscoasa(config)#access-list 102 extended permit tcp 192.168.1.0 255.255.255.0 1
 # Разрешить прохождение только ICMP-трафика из INSIDE в PRINTER
 ```
 ciscoasa(config)#access-list 102 extended permit icmp 192.168.1.0 255.255.255.0 192.168.2.0 255.255.255.0
+ciscoasa(config)#access-group 102 in interface INSIDE
 ```
 
-# ! CPT Имеет баг, который может не пропускать обратный трафик, даже при включенной политике, когда назначаются ACL листы, только на выходной interface
+# ! CPT Имеет баг, который может не пропускать обратный трафик, даже при включенной политике, когда назначаются ACL листы, только на выходной interface,для корреткной работы может потребоваться разрешения для обратного трафика.
 
 ## Выполнение 4 пункта. Из OUTSIDE разрешить инициировать сессии в DMZ по 80 TCP порту  
 ```
@@ -164,7 +165,7 @@ ciscoasa(config)#access-list 101 extended permit icmp 192.168.3.0 255.255.255.0 
 ciscoasa(config)#access-group 101 in interface DMZ
 ```
 # ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
-# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3-2.PNG)
 
 ### Правила приема домашнего задания
 
