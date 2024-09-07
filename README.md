@@ -67,7 +67,7 @@ service-policy test global
 
 # Топология 
 
-# [Скачать Файл.pkt](https://github.com/LokyRUS/homework-NTW-28-2-/blob/nevidimka/zadanie-novoe.pkt)
+# [Скачать Файл.pkt](https://github.com/LokyRUS/homework-NTW-28-2-/blob/nevidimka/zadanie.pkt)
 
 # ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
