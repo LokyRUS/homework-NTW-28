@@ -51,10 +51,10 @@
 |---|---|---|
 | AP-001 | Cisco Aironet OEAP600 Series integrated antenna|ch 1/36| 
 | AP-002 | Cisco Aironet 3600i integrated antennas |ch 6/40|
-| AP-003 | is 3rd |ch 11/44|
-| AP-004 | is 3rd |ch 2/48|
-| AP-005 | is 3rd |ch 4/52|
-| AP-006 | is 3rd |ch 7/56|
+| AP-003 | Cisco Aironet 3600i integrated antennas |ch 11/44|
+| AP-004 | Cisco Aironet 3600i integrated antennas |ch 2/48|
+| AP-005 | Cisco Aironet 3600i integrated antennas |ch 4/52|
+| AP-006 | Cisco Catalyst 9124AX Series integrated Omni directional antenna (или как и предыдущие варианты, но они не для улицы и придется что-то придумывать для изоляции от окрцжающей среды) |ch 7/56|
 ### Правила приема домашнего задания
 
 В личном кабинете отправлен файл в формате .png или .jpg.
