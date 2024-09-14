@@ -44,7 +44,7 @@
 
 # Ответ:
 # `2,4 ГГц`
-# ![imaes1] ()
+# ![imaes1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/1.PNG)
 
 |Header1|Header2|Header3|  |
 | № на плане | оборудование | ch n/n|
@@ -57,7 +57,7 @@
 | AP-006 | Cisco Catalyst 9124AX Series integrated Omni directional antenna (или как и предыдущие варианты, но они не для улицы и придется что-то придумывать для изоляции от окрцжающей среды) |ch 7/56|
 
 # `5 ГГц`
-# ![imaes2] ()
+# ![imaes2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/2.PNG)
 
 |Header1|Header2|Header3|  |
 | № на плане | оборудование | ch n/n|
