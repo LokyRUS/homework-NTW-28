@@ -43,6 +43,7 @@
 ![image](https://user-images.githubusercontent.com/5977962/170581619-8751f9e3-d0d8-4f0b-b035-878ee36b7379.png)
 
 # Ответ:
+# [Файл для симулятора]()
 # `2,4 ГГц`
 # ![imaes1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/1.PNG)
 
