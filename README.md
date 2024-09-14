@@ -43,8 +43,21 @@
 ![image](https://user-images.githubusercontent.com/5977962/170581619-8751f9e3-d0d8-4f0b-b035-878ee36b7379.png)
 
 # Ответ:
-# `2.4`
+# `2,4 ГГц`
 # ![imaes1] ()
+
+|Header1|Header2|Header3|  |
+| № на плане | оборудование | ch n/n|
+|---|---|---|
+| AP-001 | Cisco Aironet OEAP600 Series integrated antenna|ch 1/36| 
+| AP-002 | Cisco Aironet 3600i integrated antennas |ch 6/40|
+| AP-003 | Cisco Aironet 3600i integrated antennas |ch 11/44|
+| AP-004 | Cisco Aironet 3600i integrated antennas |ch 2/48|
+| AP-005 | Cisco Aironet 3600i integrated antennas |ch 4/52|
+| AP-006 | Cisco Catalyst 9124AX Series integrated Omni directional antenna (или как и предыдущие варианты, но они не для улицы и придется что-то придумывать для изоляции от окрцжающей среды) |ch 7/56|
+
+# `5 ГГц`
+# ![imaes2] ()
 
 |Header1|Header2|Header3|  |
 | № на плане | оборудование | ch n/n|
