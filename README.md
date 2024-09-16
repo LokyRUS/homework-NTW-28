@@ -48,8 +48,9 @@
 # ![imaes1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/1.PNG)
 
 
+
 | № на плане | оборудование | ch n/n| размещение|
-|---|---|---|
+|---|---|---|---|
 | AP-001 | Cisco Aironet 1830/1850 Series integrated antenna|ch 11/36| потолок |
 | AP-002 | Cisco Aironet 700W Series integrated antennas |ch 1/40|стена  |
 | AP-003 | Cisco Aironet 700W Series integrated antennas |ch 6/44|стена | 
