@@ -63,7 +63,7 @@
 
 
 | № на плане | оборудование | ch n/n|
-|---|---|---|
+|---|---|---|---|
 | AP-001 |  Cisco Aironet 1830/1850 Series integrated antenna|ch 1/36| потолок|
 | AP-002 | Cisco Aironet 700W Series integrated antennas |ch 6/40| стена|
 | AP-003 | Cisco Aironet 700W Series integrated antennas |ch 11/44| стена| 
