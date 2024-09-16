@@ -64,12 +64,12 @@
 
 | № на плане | оборудование | ch n/n| размещение|
 |---|---|---|---|
-| AP-001 |  Cisco Aironet 1830/1850 Series integrated antenna|ch 1/36| потолок|
-| AP-002 | Cisco Aironet 700W Series integrated antennas |ch 6/40| стена|
-| AP-003 | Cisco Aironet 700W Series integrated antennas |ch 11/44| стена| 
-| AP-004 | Cisco Aironet 700W Series integrated antennas |ch 2/48| стена| 
-| AP-005 | Cisco Aironet 700W Series integrated antennas |ch 4/52| стена| 
-| AP-006 | Cisco Catalyst 9124AX Series integrated Omni directional antenna |ch 7/56| забор|
+| AP-001 |  Cisco Aironet 1830/1850 Series integrated antenna|ch 11/36| потолок|
+| AP-002 | Cisco Aironet 700W Series integrated antennas |ch 1/40| стена|
+| AP-003 | Cisco Aironet 700W Series integrated antennas |ch 6/44| стена| 
+| AP-004 | Cisco Aironet 700W Series integrated antennas |ch 11/48| стена| 
+| AP-005 | Cisco Aironet 700W Series integrated antennas |ch 6/52| стена| 
+| AP-006 | Cisco Catalyst 9124AX Series integrated Omni directional antenna |ch 1/56| забор|
 ### Правила приема домашнего задания
 
 В личном кабинете отправлен файл в формате .png или .jpg.
