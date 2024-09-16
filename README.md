@@ -60,7 +60,7 @@
 # `5 ГГц`
 # ![imaes2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/2.PNG)
 
-|Header1|Header2|Header3|  |
+
 | № на плане | оборудование | ch n/n|
 |---|---|---|
 | AP-001 |  Cisco Aironet 1830/1850 Series integrated antenna|ch 1/36| потолок|
