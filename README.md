@@ -39,6 +39,214 @@
 *Отправьте полный список конфигураций: class-map, policy-map service-policy.*
 
 ------
+# Ответ:
+
+# R1
+
+## TCP трафик с destination порт 80/443
+```
+Router(config)#access-list 110 permit tcp 192.168.5.0 0.0.0.255 any eq www 
+```
+#### class-map
+```
+Router(config)#class-map match-any USER_TRAFIC_WEB
+Router(config-cmap)#match access-group 110
+```
+## UDP трафик с destination порт 5060-5061
+```
+Router(config)#access-list 111 permit udp 192.168.5.0 0.0.0.255 any range 5060 5061
+```
+#### class-map
+```
+Router(config)#class-map match-any UDP_USER_TRAFIC
+Router(config-cmap)#match access-group 111
+```
+## Трафик ICMP 
+```
+#access-list 112 permit icmp 192.168.5.0 0.0.0.255 any
+```
+#### class-map
+```
+Router(config)#class-map match-any ICMP_USER_TRAFIC
+Router(config-cmap)#match access-group 112
+```
+## policy-map 
+```
+Router(config)#policy-map TRAFIC_MARK_in
+Router(config-pmap)#class USER_TRAFIC_WEB
+Router(config-pmap-c)#set ip dscp af43
+Router(config-pmap-c)#ex
+Router(config-pmap)#class UDP_USER_TRAFIC
+Router(config-pmap-c)#set ip dscp cs5
+Router(config-pmap)#ex
+Router(config)#interface gigabitEthernet 0/0/1
+```
+### service-policy
+```
+Router(config-if)#service-policy input TRAFIC_MARK_in
+```
+## policy-map
+```
+Router(config)#policy-map TRAFIC_MARK_out
+Router(config-pmap)#class ICMP_USER_TRAFIC
+Router(config-pmap-c)#set cos 3
+Router(config-pmap-c)#ex
+Router(config-pmap)#ex
+Router(config)#interface gigabitEthernet 0/0/0
+```
+### service-policy
+```
+Router(config-if)#service-policy output TRAFIC_MARK_out
+```
+
+# R vLOS
+
+## TCP трафик с destination порт 80/443
+```
+Router(config)#access-list 110 permit tcp 10.10.10.0 0.0.0.255 any eq www 
+```
+#### class-map
+```
+Router(config)#class-map match-any USER_TRAFIC_WEB
+Router(config-cmap)#match access-group 110
+```
+## UDP трафик с destination порт 5060-5061
+```
+Router(config)#access-list 111 permit udp 10.10.10.0 0.0.0.255 any range 5060 5061
+```
+#### class-map
+```
+Router(config)#class-map match-any UDP_USER_TRAFIC
+Router(config-cmap)#match access-group 111
+```
+## Трафик ICMP 
+```
+Router(config)#access-list 112 permit icmp 10.10.10.0 0.0.0.255 any
+```
+#### class-map
+```
+Router(config)#class-map match-any ICMP_USER_TRAFIC
+Router(config-cmap)#match access-group 112
+```
+## Трафик от клиента Client3 до Client1 
+```
+Router(config)#access-list 113 permit ip host 10.10.10.30 host 192.168.5.10
+```
+#### class-map
+```
+Router(config)#class-map match-any CLIENT2_CLIENT1
+Router(config-cmap)#match access-group 113
+```
+## policy-map 
+```
+Router(config)#policy-map TRAFIC_MARK_in
+Router(config-pmap)#class USER_TRAFIC_WEB
+Router(config-pmap-c)#set ip dscp af43
+Router(config-pmap-c)#ex
+Router(config-pmap)#class UDP_USER_TRAFIC
+Router(config-pmap-c)#set ip dscp cs5
+Router(config-pmap)#ex
+```
+### service-policy
+```
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)#service-policy input TRAFIC_MARK_in
+```
+
+## policy-map
+```
+Router(config)#policy-map TRAFIC_MARK_out
+Router(config-pmap)#class ICMP_USER_TRAFIC
+Router(config-pmap-c)#set cos 3
+Router(config-pmap-c)#ex
+Router(config-pmap)#class CLIENT2_CLIENT1
+Router(config-pmap-c)#set ip dscp ef
+Router(config-pmap-c)#ex
+Router(config-pmap)#ex
+```
+### service-policy
+```
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#service-policy output TRAFIC_MARK_out
+```
+
+# R2
+
+## TCP трафик с destination порт 80/443
+```
+Router(config)#access-list 110 permit tcp 172.16.1.0 0.0.0.255 any eq www 
+```
+#### class-map
+```
+Router(config)#class-map match-any USER_TRAFIC_WEB
+Router(config-cmap)#match access-group 110
+```
+
+## UDP трафик с destination порт 5060-5061
+```
+Router(config)#access-list 111 permit udp 172.16.1.0 0.0.0.255 any range 5060 5061
+```
+#### class-map
+```
+Router(config)#class-map match-any UDP_USER_TRAFIC
+Router(config-cmap)#match access-group 111
+```
+
+## Трафик ICMP 
+```
+Router(config)#access-list 112 permit icmp 172.16.1.0 0.0.0.255 any
+```
+#### class-map
+```
+Router(config)#class-map match-any ICMP_USER_TRAFIC
+Router(config-cmap)#match access-group 112
+```
+
+## Трафик от клиента Client2 до Client1 
+```
+
+Router(config)#access-list 113 permit ip host 172.16.1.20 host 192.168.5.10
+```
+#### class-map
+```
+Router(config)#class-map match-any CLIENT2_CLIENT1
+Router(config-cmap)#match access-group 113
+```
+
+
+## policy-map 
+```
+Router(config)#policy-map TRAFIC_MARK_in
+Router(config-pmap)#class USER_TRAFIC_WEB
+Router(config-pmap-c)#set ip dscp af43
+Router(config-pmap-c)#ex
+Router(config-pmap)#class UDP_USER_TRAFIC
+Router(config-pmap-c)#set ip dscp cs5
+Router(config-pmap)#ex
+```
+### service-policy
+```
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)#service-policy input TRAFIC_MARK_in
+```
+
+## policy-map 
+```
+Router(config)#policy-map TRAFIC_MARK_out
+Router(config-pmap)#class ICMP_USER_TRAFIC
+Router(config-pmap-c)#set cos 3
+Router(config-pmap-c)#ex
+Router(config-pmap)#class CLIENT2_CLIENT1
+Router(config-pmap-c)#set ip dscp ef
+Router(config-pmap-c)#ex
+Router(config-pmap)#ex
+```
+### service-policy
+```
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#service-policy output TRAFIC_MARK_out
+```
+
 
 ### Правила приема домашнего задания
 
