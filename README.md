@@ -79,26 +79,15 @@ Router(config-pmap-c)#ex
 Router(config-pmap)#class UDP_USER_TRAFIC
 Router(config-pmap-c)#set ip dscp cs5
 Router(config-pmap)#ex
-Router(config)#interface gigabitEthernet 0/0/1
-```
-### service-policy
-```
-Router(config-if)#service-policy input TRAFIC_MARK_in
-```
-## policy-map
-```
-Router(config)#policy-map TRAFIC_MARK_out
 Router(config-pmap)#class ICMP_USER_TRAFIC
 Router(config-pmap-c)#set cos 3
 Router(config-pmap-c)#ex
-Router(config-pmap)#ex
-Router(config)#interface gigabitEthernet 0/0/0
 ```
 ### service-policy
 ```
-Router(config-if)#service-policy output TRAFIC_MARK_out
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)#service-policy input TRAFIC_MARK_in
 ```
-
 # R vLOS
 
 ## TCP трафик с destination порт 80/443
@@ -146,6 +135,10 @@ Router(config-pmap-c)#ex
 Router(config-pmap)#class UDP_USER_TRAFIC
 Router(config-pmap-c)#set ip dscp cs5
 Router(config-pmap)#ex
+Router(config-pmap)#class ICMP_USER_TRAFIC
+Router(config-pmap-c)#set cos 3
+Router(config-pmap-c)#ex
+
 ```
 ### service-policy
 ```
@@ -153,22 +146,6 @@ Router(config)#interface gigabitEthernet 0/0/1
 Router(config-if)#service-policy input TRAFIC_MARK_in
 ```
 
-## policy-map
-```
-Router(config)#policy-map TRAFIC_MARK_out
-Router(config-pmap)#class ICMP_USER_TRAFIC
-Router(config-pmap-c)#set cos 3
-Router(config-pmap-c)#ex
-Router(config-pmap)#class CLIENT2_CLIENT1
-Router(config-pmap-c)#set ip dscp ef
-Router(config-pmap-c)#ex
-Router(config-pmap)#ex
-```
-### service-policy
-```
-Router(config)#interface gigabitEthernet 0/0/0
-Router(config-if)#service-policy output TRAFIC_MARK_out
-```
 
 # R2
 
@@ -223,28 +200,14 @@ Router(config-pmap-c)#ex
 Router(config-pmap)#class UDP_USER_TRAFIC
 Router(config-pmap-c)#set ip dscp cs5
 Router(config-pmap)#ex
+Router(config-pmap)#class ICMP_USER_TRAFIC
+Router(config-pmap-c)#set cos 3
+Router(config-pmap-c)#ex
 ```
 ### service-policy
 ```
 Router(config)#interface gigabitEthernet 0/0/1
 Router(config-if)#service-policy input TRAFIC_MARK_in
-```
-
-## policy-map 
-```
-Router(config)#policy-map TRAFIC_MARK_out
-Router(config-pmap)#class ICMP_USER_TRAFIC
-Router(config-pmap-c)#set cos 3
-Router(config-pmap-c)#ex
-Router(config-pmap)#class CLIENT2_CLIENT1
-Router(config-pmap-c)#set ip dscp ef
-Router(config-pmap-c)#ex
-Router(config-pmap)#ex
-```
-### service-policy
-```
-Router(config)#interface gigabitEthernet 0/0/0
-Router(config-if)#service-policy output TRAFIC_MARK_out
 ```
 
 
