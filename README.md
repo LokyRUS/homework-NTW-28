@@ -79,6 +79,19 @@ service-policy  input in_out
 
 *Отправьте скриншот с итоговыми результатами измерений для каждого протокола.* 
 
+# Ответ
+`TCP`
+```
+.\iperf3 -t 30 -c speedtest.uztelecom.uz
+```
+# ![images 1]()
+
+`UDP`
+```
+.\iperf3 -t 30 -u -c speedtest.uztelecom.uz
+```
+
+# ![images2]()
 ### Правила приема домашнего задания
 
 В личном кабинете отправлены:
