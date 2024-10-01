@@ -84,14 +84,14 @@ service-policy  input in_out
 ```
 .\iperf3 -t 30 -c speedtest.uztelecom.uz
 ```
-# ![images 1]()
+# ![images 1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/1.PNG)
 
 `UDP`
 ```
 .\iperf3 -t 30 -u -c speedtest.uztelecom.uz
 ```
 
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/2.PNG)
 ### Правила приема домашнего задания
 
 В личном кабинете отправлены:
