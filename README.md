@@ -80,13 +80,13 @@ service-policy  input in_out
 *Отправьте скриншот с итоговыми результатами измерений для каждого протокола.* 
 
 # Ответ
-`TCP`
+# `TCP`
 ```
 .\iperf3 -t 30 -c speedtest.uztelecom.uz
 ```
 # ![images 1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/1.PNG)
 
-`UDP`
+# `UDP`
 ```
 .\iperf3 -t 30 -u -c speedtest.uztelecom.uz
 ```
