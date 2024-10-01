@@ -61,9 +61,9 @@ match access-group name out
 ```
 police-map in-out
 class in 
-policer cir 10 m bc 6000000 conform-action transmit exeed-action drop
+policer cir 10 m bc 750000 conform-action transmit exeed-action drop
 class out 
-policer cir 10 m bc 6000000 conform-action transmit exeed-action drop
+policer cir 10 m bc 750000 conform-action transmit exeed-action drop
 ```
 ## Применение на интерфесе 
 ```
