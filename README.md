@@ -1,5 +1,6 @@
 # Домашнее задание к занятию "Policing и Shaping трафика"
 
+## Исполнитель: Смирнов К.Е. -NTW-28
 ### Цель задания
 
 Попрактиковать использование утилиты iperf и научится конфигурировать policer, использующий определенный алгоритм Token Bucket. 
@@ -30,7 +31,46 @@
 Полисер должен обеспечивать постоянную полосу в 10Мбит/c и позволять амортизировать всплески, превышающие допустимую полосу на 6 Мбит  на протяжении 1 секунды. 
 
 *Отправьте полный список конфигураций: class-map, policy-map service-policy. Если используете симуляцию, то прислать скриншот, где видно счетчики полисера*
+# Ответ
 
+## Ограничение входящего  и исходящего трафика 
+`входящий`
+```
+access-list extended in
+permit ip any 192.168.200.0 0.0.0.254
+```
+`исходящий`
+```
+access-list extended out
+permit ip 192.168.200.0 0.0.0.254 any
+```
+
+## Настройка  класс map
+`входящий`
+```
+class-map in 
+match access-group name in
+```
+`исходящий`
+```
+class-map out 
+match access-group name out
+```
+
+## Настройка поиси мар
+```
+police-map in-out
+class in 
+policer cir 10 m bc 6000000 conform-action transmit exeed-action drop
+class out 
+policer cir 10 m bc 6000000 conform-action transmit exeed-action drop
+```
+## Применение на интерфесе 
+```
+interfaces e0/1
+service-policy  output in_out
+service-policy  input in_out
+```
 ### Задание 2. 
 
 1. Установить себе на ПК утилиту Iperf3.  
