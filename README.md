@@ -56,24 +56,73 @@
 # `Сегиентирование локаьной сети` 
 |VLAN|Пользователи|
 |---|---|
-|VLAN10|topmanager (ТОП-менеджеры)|
+|VLAN10|IT(IT-отдел) |
 |VLAN20|manager (менеджеры по продажам)|
-|VLAN30|IT(IT-отдел)|
+|VLAN30|topmanager (ТОП-менеджеры)|
 |VLAN40|security (служба безопасности)|
 |VLAN50|Buh (бухгалтерия)|
 
 # `Сегиентирование беспроводной сети`
 |VLAN|Пользователи|
 |---|---|
-|VLAN60|контроллер , маршрутизатор, точки доступа|
-|VLAN10|AP1|
-|VLAN20|AP2|
-|VLAN30|AP3|
-|VLAN40|AP4|
-|VLAN50|AP5|
+|VLAN20|AP1|
+|VLAN30|AP2|
 
 |Устройство||||||
 |---|---|---|---|---|---|
+
+# Настройка IT- отдела и выделение 10 Vlan, для управления инфрой 
+Switch (IT)
+```
+Switch>
+Switch>
+Switch>en
+Switch>enable 
+Switch#con
+Switch#con
+% Ambiguous command: "con"
+Switch#cpnf
+Switch#conf
+Switch#configure ter
+Switch#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vla
+Switch(config)#vlan 10
+Switch(config-vlan)#ex
+Switch(config)#in
+Switch(config)#interface f
+Switch(config)#interface fastEthernet 0/1
+Switch(config-if)#sw
+Switch(config-if)#switchport ac
+Switch(config-if)#switchport access vla
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/3, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#ex
+Switch(config)#
+Switch(config)#
+Switch(config)#in
+Switch(config)#interface f
+Switch(config)#interface fastEthernet 0/3
+Switch(config-if)#csw
+Switch(config-if)#s
+Switch(config-if)#sw
+Switch(config-if)#switchport mod
+Switch(config-if)#switchport mode ac
+Switch(config-if)#switchport mode access 
+Switch(config-if)#sw
+Switch(config-if)#switchport ac
+Switch(config-if)#switchport access vl
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#
+
+
+```
 
 ### Правила приема домашнего задания
 
