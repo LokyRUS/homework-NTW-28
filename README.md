@@ -138,6 +138,47 @@ Switch(config)#interface fastEthernet 0/2
 Switch(config-if)#switchport mode access
 Switch(config-if)#switchport access vlan 50 
 ```
+# Настройка свича Отделов общий
+
+```
+Switch(config)#vlan 10
+Switch(config-vlan)#ex
+Switch(config)#vlan 20
+Switch(config-vlan)#ex
+Switch(config)#vla
+Switch(config)#vlan 30
+Switch(config-vlan)#ex
+Switch(config)#vlan 40
+Switch(config-vlan)#ex
+Switch(config)#vlan 50
+Switch(config-vlan)#ex
+Switch(config)#interface fastEthernet 0/1
+Switch(config-if)#switchport trunk allowed vlan 10,20,30,40,50
+Switch(config-if)#ex
+Switch(config)#interface fastEthernet 0/2
+Switch(config-if)#switchport access vlan 10
+Switch(config)#ex
+Switch(config)#interface fastEthernet 0/3
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#switchport trunk native vlan 10
+Switch(config-if)#switchport trunk allowed vlan 10,20
+Switch(config)#interface fastEthernet 0/4
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#switchport trunk native vlan 10
+Switch(config-if)#switchport trunk allowed vlan 10,30
+Switch(config)#interface fastEthernet 0/5
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#switchport trunk native vlan 10
+Switch(config-if)#switchport trunk allowed vlan 10,40
+Switch(config)#interface fastEthernet 0/6
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#switchport trunk native vlan 10
+Switch(config-if)#switchport trunk allowed vlan 10,50
+
+
+```
+
+
 ### Правила приема домашнего задания
 
 В личном кабинете отправлены:
