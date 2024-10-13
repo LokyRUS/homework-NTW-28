@@ -80,7 +80,7 @@ Switch(config)#interface fastEthernet 0/1
 Switch(config-if)#switchport access vlan 10
 Switch(config)#interface fastEthernet 0/3
 Switch(config-if)#switchport access vlan 10
-
+```
 # Настройка свича менеджеров 
 ```
 Switch#configure terminal 
