@@ -75,7 +75,7 @@
 # Тополлогия  
 [СКАЧАТЬ_ФАЙЛ_С_ТОПОЛОГИЕЙ]()
 
-# [images99]()
+# [images99](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99.PNG)
 
 # Настройка свича IT Vlan 10
 
@@ -242,20 +242,20 @@ Switch(config-if)#switchport access vlan 10
 Switch(config-if)#ex
 ```
 # Назначаем Ip адрес контроллеру
-# ![images1]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
 
 # !!Настройка DHCP на роутере для wifi сетей была произведена ранее с опцией 43.
 
 # Созадние сетей для Manager и TOP-manager
-# ![images2]()
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
-# ![images3]()
+# ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
 
 # Созадние групп 
 
-# ![images4]()
+# ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 
-# ![images5]()
+# ![images5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
 
 
 # !!! Настройки филилалов аднотипные, по подобию с цетнральным офисом 
