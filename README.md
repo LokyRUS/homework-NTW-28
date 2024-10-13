@@ -251,6 +251,178 @@ Switch(config-if)#ex
 
 # ![images5]()
 
+# Создание VPN тоннелей с флиалами 
+ # R1-R2
+`R1`
+```
+R1(config)#access-list 110 permit ip 192.168.10.0 0.0.0.255 172.16.1.0 0.0.0.255
+R1(config)#access-list 110 permit ip 192.168.20.0 0.0.0.255 172.16.1.0 0.0.0.255
+R1(config)#access-list 110 permit ip 192.168.30.0 0.0.0.255 172.16.1.0 0.0.0.255
+R1(config)#access-list 110 permit ip 192.168.40.0 0.0.0.255 172.16.1.0 0.0.0.255
+R1(config)#access-list 110 permit ip 192.168.50.0 0.0.0.255 172.16.1.0 0.0.0.255
+R1(config)#crypto isakmp policy 10
+R1(config-isakmp)#encryption 3des 
+R1(config-isakmp)#authentication pre-share 
+R1(config-isakmp)#hash md5
+R1(config-isakmp)#group 2
+R1(config-isakmp)#Lifetime 3600
+R1(config-isakmp)#ex
+R1(config)#crypto isakmp key cisco address 100.0.0.2
+R1(config)#crypto ipsec  transform-set VPN-SET ah-md5-hmac esp-3des
+R1(config)#crypto map VPN-MAP 10 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R1(config-crypto-map)#description VPN connection to R2
+R1(config-crypto-map)#set peer 100.0.0.2
+R1(config-crypto-map)#set transform-set VPN-SET
+R1(config-crypto-map)#match address 110
+R1(config-crypto-map)#ex
+R1(config)#interface gigabitEthernet 0/0/1
+R1(config-if)#crypto map VPN-MAP
+```
+`R2`
+```
+R2(config)#access-list 110 permit ip 172.16.1.0 0.0.0.255 192.168.10.0 0.0.0.255
+R2(config)#access-list 110 permit ip 172.16.1.0 0.0.0.255 192.168.20.0 0.0.0.255
+R2(config)#access-list 110 permit ip 172.16.1.0 0.0.0.255 192.168.30.0 0.0.0.255
+R2(config)#access-list 110 permit ip 172.16.1.0 0.0.0.255 192.168.40.0 0.0.0.255
+R2(config)#access-list 110 permit ip 172.16.1.0 0.0.0.255 192.168.50.0 0.0.0.255
+R2(config)#crypto isakmp policy 10
+R2(config-isakmp)#encryption 3des 
+R2(config-isakmp)#authentication pre-share 
+R2(config-isakmp)#hash md5
+R2(config-isakmp)#group 2
+R2(config-isakmp)#Lifetime 3600
+R2(config-isakmp)#ex
+R2(config)#crypto isakmp key cisco address 100.0.0.1
+R2(config)#crypto ipsec  transform-set VPN-SET ah-md5-hmac esp-3des
+R2(config)#crypto map VPN-MAP 10 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R2(config-crypto-map)#description VPN connection to R1
+R2(config-crypto-map)#set peer 100.0.0.1
+R2(config-crypto-map)#set transform-set VPN-SET
+R2(config-crypto-map)#match address 110
+R2(config-crypto-map)#ex
+R2(config)#interface gigabitEthernet 0/0/1
+R2(config-if)#crypto map VPN-MAP
+
+```
+
+
+ # R1-R3
+`R1`
+```
+R1(config)#access-list 120 permit ip 192.168.10.0 0.0.0.255 172.20.1.0 0.0.0.255
+R1(config)#access-list 120 permit ip 192.168.20.0 0.0.0.255 172.20.1.0 0.0.0.255
+R1(config)#access-list 120 permit ip 192.168.30.0 0.0.0.255 172.20.1.0 0.0.0.255
+R1(config)#access-list 120 permit ip 192.168.40.0 0.0.0.255 172.20.1.0 0.0.0.255
+R1(config)#access-list 120 permit ip 192.168.50.0 0.0.0.255 172.20.1.0 0.0.0.255
+R1(config)#crypto isakmp policy 20
+R1(config-isakmp)#encryption 3des 
+R1(config-isakmp)#authentication pre-share 
+R1(config-isakmp)#hash md5
+R1(config-isakmp)#group 2
+R1(config-isakmp)#Lifetime 3600
+R1(config-isakmp)#ex
+R1(config)#crypto isakmp key cisco address 100.0.10.2
+R1(config)#crypto ipsec  transform-set VPN-SET2 ah-md5-hmac esp-3des
+R1(config)#crypto map VPN-MAP2 20 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R1(config-crypto-map)#description VPN connection to R3
+R1(config-crypto-map)#set peer 100.0.10.2
+R1(config-crypto-map)#set transform-set VPN-SET2
+R1(config-crypto-map)#match address 120
+R1(config-crypto-map)#ex
+R1(config)#interface FastEthernet 1/0
+R1(config-if)#crypto map VPN-MAP2
+```
+`R3`
+```
+R3(config)#access-list 110 permit ip 172.20.1.0 0.0.0.255 192.168.10.0 0.0.0.255
+R3(config)#access-list 110 permit ip 172.20.1.0 0.0.0.255 192.168.20.0 0.0.0.255
+R3(config)#access-list 110 permit ip 172.20.1.0 0.0.0.255 192.168.30.0 0.0.0.255
+R3(config)#access-list 110 permit ip 172.20.1.0 0.0.0.255 192.168.40.0 0.0.0.255
+R3(config)#access-list 110 permit ip 172.20.1.0 0.0.0.255 192.168.50.0 0.0.0.255
+R3(config)#crypto isakmp policy 10
+R3(config-isakmp)#encryption 3des 
+R3(config-isakmp)#authentication pre-share 
+R3(config-isakmp)#hash md5
+R3(config-isakmp)#group 2
+R3(config-isakmp)#Lifetime 3600
+R3(config-isakmp)#ex
+R3(config)#crypto isakmp key cisco address 100.0.10.1
+R3(config)#crypto ipsec  transform-set VPN-SET ah-md5-hmac esp-3des
+R3(config)#crypto map VPN-MAP 10 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R3(config-crypto-map)#description VPN connection to R1
+R3(config-crypto-map)#set peer 100.0.0.1
+R3(config-crypto-map)#set transform-set VPN-SET
+R3(config-crypto-map)#match address 110
+R3(config-crypto-map)#ex
+R3(config)#interface gigabitEthernet 0/0/1
+R3(config-if)#crypto map VPN-MAP
+
+```
+ # R1-R4
+`R1`
+```
+R1(config)#access-list 130 permit ip 192.168.10.0 0.0.0.255 172.30.1.0 0.0.0.255
+R1(config)#access-list 130 permit ip 192.168.20.0 0.0.0.255 172.30.1.0 0.0.0.255
+R1(config)#access-list 130 permit ip 192.168.30.0 0.0.0.255 172.30.1.0 0.0.0.255
+R1(config)#access-list 130 permit ip 192.168.40.0 0.0.0.255 172.30.1.0 0.0.0.255
+R1(config)#access-list 130 permit ip 192.168.50.0 0.0.0.255 172.30.1.0 0.0.0.255
+R1(config)#crypto isakmp policy 30
+R1(config-isakmp)#encryption 3des 
+R1(config-isakmp)#authentication pre-share 
+R1(config-isakmp)#hash md5
+R1(config-isakmp)#group 2
+R1(config-isakmp)#Lifetime 3600
+R1(config-isakmp)#ex
+R1(config)#crypto isakmp key cisco address 100.0.20.2
+R1(config)#crypto ipsec  transform-set VPN-SET3 ah-md5-hmac esp-3des
+R1(config)#crypto map VPN-MAP3 30 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R1(config-crypto-map)#description VPN connection to R4
+R1(config-crypto-map)#set peer 100.0.20.2
+R1(config-crypto-map)#set transform-set VPN-SET3
+R1(config-crypto-map)#match address 130
+R1(config-crypto-map)#ex
+R1(config)#interface FastEthernet 1/1
+R1(config-if)#crypto map VPN-MAP3
+```
+`R4`
+```
+R4(config)#access-list 110 permit ip 172.30.1.0 0.0.0.255 192.168.10.0 0.0.0.255
+R4(config)#access-list 110 permit ip 172.30.1.0 0.0.0.255 192.168.20.0 0.0.0.255
+R4(config)#access-list 110 permit ip 172.30.1.0 0.0.0.255 192.168.30.0 0.0.0.255
+R4(config)#access-list 110 permit ip 172.30.1.0 0.0.0.255 192.168.40.0 0.0.0.255
+R4(config)#access-list 110 permit ip 172.30.1.0 0.0.0.255 192.168.50.0 0.0.0.255
+R4(config)#crypto isakmp policy 10
+R4(config-isakmp)#encryption 3des 
+R4(config-isakmp)#authentication pre-share 
+R4(config-isakmp)#hash md5
+R4(config-isakmp)#group 2
+R4(config-isakmp)#Lifetime 3600
+R4(config-isakmp)#ex
+R4(config)#crypto isakmp key cisco address 100.0.20.1
+R4(config)#crypto ipsec  transform-set VPN-SET ah-md5-hmac esp-3des
+R4(config)#crypto map VPN-MAP 10 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R4(config-crypto-map)#description VPN connection to R1
+R4(config-crypto-map)#set peer 100.0.20.1
+R4(config-crypto-map)#set transform-set VPN-SET
+R4(config-crypto-map)#match address 110
+R4(config-crypto-map)#ex
+R4(config)#interface gigabitEthernet 0/0/1
+R4(config-if)#crypto map VPN-MAP
+
+```
+
 ### Правила приема домашнего задания
 
 В личном кабинете отправлены:
