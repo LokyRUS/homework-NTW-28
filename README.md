@@ -109,7 +109,7 @@ Switch(config)#interface fastEthernet 0/2
 Switch(config-if)#switchport mode access
 Switch(config-if)#switchport access vlan 30 
 ```
-# Настройка свича Охраны 
+# Настройка свича Охраны - Камеры входят с состав VLAN охраны 
 ```
 Switch#configure terminal 
 Switch(config)#vlan 10
