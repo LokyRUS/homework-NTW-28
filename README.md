@@ -225,6 +225,18 @@ Router(config-subif)#ip address 192.168.50.1 255.255.255.0
 Router(config-subif)#ex
 
 ```
+# Назначаем порт в сторону контроллера к аксес режиме на Vlan 10
+```
+Switch>en
+Switch>enable 
+Switch#configure terminal 
+Switch(config)#interface fastEthernet 0/1
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#ex
+```
+# Назначаем Ip адрес контроллеру
+# ![images1]()
 
 ### Правила приема домашнего задания
 
