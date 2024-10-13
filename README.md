@@ -73,7 +73,7 @@
 
 
 # Тополлогия  
-[СКАЧАТЬ_ФАЙЛ_С_ТОПОЛОГИЕЙ]()
+# [СКАЧАТЬ_ФАЙЛ_С_ТОПОЛОГИЕЙ]()
 
 # ![images99](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99.PNG)
 
