@@ -174,8 +174,31 @@ Switch(config)#interface fastEthernet 0/6
 Switch(config-if)#switchport mode trunk 
 Switch(config-if)#switchport trunk native vlan 10
 Switch(config-if)#switchport trunk allowed vlan 10,50
+```
+### Настройка DHCP На роутере 
 
-
+```
+Router#configure terminal 
+Router(config)#ip dhcp pool IT_otdel
+Router(dhcp-config)#network 192.168.10.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.10.1
+Router(dhcp-config)#option 43 ip 192.168.10.50
+Router(config)#ip dhcp pool Manager
+Router(dhcp-config)#network 192.168.20.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.20.1
+Router(dhcp-config)#ex
+Router(config)#ip dhcp pool TOP_Manager
+Router(dhcp-config)#network 192.168.30.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.30.1
+Router(dhcp-config)#
+Router(config)#ip dhcp pool Security
+Router(dhcp-config)#network 192.168.40.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.40.1
+Router(dhcp-config)#ex
+Router(config)#ip dhcp pool BUH
+Router(dhcp-config)#network 192.168.50.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.50.1
+Router(dhcp-config)#
 ```
 
 
