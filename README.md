@@ -200,7 +200,31 @@ Router(dhcp-config)#network 192.168.50.0 255.255.255.0
 Router(dhcp-config)#default-router 192.168.50.1
 Router(dhcp-config)#
 ```
+## Создание сабинтерфейсов 
 
+```
+Router(config)#interface FastEthernet 0/1.10
+Router(config-subif)#encapsulation dot1Q 10
+Router(config-subif)#ip address 192.168.10.1 255.255.255.0
+Router(config-subif)#ex
+Router(config)#interface FastEthernet 0/1.20
+Router(config-subif)#encapsulation dot1Q 20
+Router(config-subif)#ip address 192.168.20.1 255.255.255.0
+Router(config-subif)#ex
+Router(config)#interface FastEthernet 0/1.30
+Router(config-subif)#encapsulation dot1Q 30
+Router(config-subif)#ip address 192.168.30.1 255.255.255.0
+Router(config-subif)#ex
+Router(config)#interface FastEthernet 0/1.40
+Router(config-subif)#encapsulation dot1Q 40
+Router(config-subif)#ip address 192.168.40.1 255.255.255.0
+Router(config-subif)#ex
+Router(config)#interface FastEthernet 0/1.50
+Router(config-subif)#encapsulation dot1Q 50
+Router(config-subif)#ip address 192.168.50.1 255.255.255.0
+Router(config-subif)#ex
+
+```
 
 ### Правила приема домашнего задания
 
