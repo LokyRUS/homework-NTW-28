@@ -71,6 +71,7 @@
 # Топология
 ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/1.PNG)
 
+#[Скачать файл.pkt](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/zadanie.pkt)
 
 # Настройка интерфейсов на router1 
 ```
