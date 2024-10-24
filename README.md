@@ -65,6 +65,221 @@
 |Router2--Routerinternet|10.0.2.0/24|
 |Tunel0|10.10.10.0/24|  
 |Router3--Routerinternet|10.0.3.0/24|
+|Tunel0|10.10.10.0/24|  
+|Tunel1|10.10.20.0/24|  
+
+# Настройка интерфейсов на router1 
+```
+Router#configure terminal in
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#ip address 192.168.10.1 255.255.255.0
+Router(config-if)#no shut
+Router(config-if)#no shutdown 
+
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)#ip ad
+Router(config-if)#ip address 10.0.1.2 255.255.255.0
+Router(config-if)#no shu
+Router(config-if)#no shutdown 
+```
+
+# Настройка интерфейсов на router2
+```
+Router2(config)#interface gigabitEthernet 0/0/0
+Router2(config-if)#ip address 192.168.10.2 255.255.255.0
+Router2(config-if)#no shutdown 
+Router2(config)#interface gigabitEthernet 0/0/1
+Router2(config-if)#ip address 10.0.2.2 255.255.255.0
+Router2(config-if)#no shutdown 
+```
+# Настройка интерфейсов на router internet
+```
+Router#configure terminal in
+Router(config)#interface gigabitEthernet 0/2
+Router(config-if)#ip address 10.0.1.1 255.255.255.0
+Router(config-if)#no shutdown 
+
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 10.0.2.1 255.255.255.0
+Router(config-if)#no shutdown 
+
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 10.0.3.1 255.255.255.0
+Router(config-if)#no shutdown 
+```
+
+# Настройка интерфейсов на router 4 
+```
+Router#configure terminal in
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#ip address 10.0.3.2 255.255.255.0
+Router(config-if)#no shutdown 
+
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)#ip address 192.168.20.1 255.255.255.0
+Router(config-if)#no shutdown 
+```
+# Настройка HSRP на Router 1 
+```
+Router1(config)#interface gigabitEthernet 0/0/0
+Router1(config-if)#standby 1 ip 192.168.10.1 
+Router1(config-if)#standby 1 priority 100
+Router2(config-if)#standby 1 preempt 
+Router2(config-if)#standby 1 track gigabitEthernet 0/0/1
+```
+# Настройка HSRP на Router 2
+```
+Router2(config)#interface gigabitEthernet 0/0/0
+Router2(config-if)#standby 1 ip 192.168.10.1
+Router2(config-if)#standby 1 priority 105
+Router2(config-if)#standby 1 preempt 
+Router2(config-if)#standby 1 track gigabitEthernet 0/0/1
+Router2(config-if)#ex
+Router2(config)#
+
+```
+# Настройка BGP 
+
+## Настройка на Router internet
+```
+Router>enable
+Router#
+Router#configure terminal
+Router(config)#router bgp 500
+Router(config-router)#network 10.0.1.0 mask 255.255.255.0
+Router(config-router)#neighbor 10.0.1.2 remote-as 100
+Router(config-router)#network 10.0.2.0 mask 255.255.255.0
+Router(config-router)#neighbor 10.0.2.2 remote-as 100
+Router(config-router)#network 10.0.3.0 mask 255.255.255.0
+Router(config-router)#neighbor 10.0.3.2 remote-as 200
+Router(config-router)#
+```
+## Настройка на Router1
+```
+Router>enable
+Router#
+Router#configure terminal
+Router(config)#router bgp 100
+Router(config-router)#network 10.0.1.0 mask 255.255.255.0
+Router(config-router)#neighbor 10.0.1.1 remote-as 500
+```
+## Настройка на Router2
+
+```
+Router>enable
+Router#
+Router#configure terminal
+Router(config)#router bgp 100
+Router(config-router)#network 10.0.2.0 mask 255.255.255.0
+Router(config-router)#neighbor 10.0.2.1 remote-as 500
+```
+## Настройка на Router3
+```
+Router(config-router)#network 10.0.3.0 mask 255.255.255.0
+Router(config-router)#neighbor 10.0.3.1 remote-as 500
+Router(config-router)#
+```
+# Создание тоннеля  и OSPF маршрутизации 
+
+# Создание тоннеля на Router1
+
+`Тоннель`
+```
+Router2#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router2(config)#interface tunnel 0
+
+Router2(config-if)#
+%LINK-5-CHANGED: Interface Tunnel0, changed state to up
+
+Router2(config-if)#ip address 10.10.20.1 255.255.255.0
+Router2(config-if)#tunnel source gigabitEthernet 0/0/1
+Router2(config-if)#tunnel destination 10.0.3.2
+Router2(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Tunnel0, changed state to up
+
+```
+`OSPF`
+
+```
+Router2(config)#router ospf 1
+Router1(config-router)#network 192.168.10.0 0.0.0.255 area 0
+Router1(config-router)#network 10.10.20.0 0.0.0.255 area 0
+Router1(config-router)#
+```
+# Создание тоннеля на Router2
+
+`Тоннель`
+```
+Router2#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router2(config)#interface tunnel 0
+
+Router2(config-if)#
+%LINK-5-CHANGED: Interface Tunnel0, changed state to up
+
+Router2(config-if)#ip address 10.10.10.1 255.255.255.0
+Router2(config-if)#tunnel source gigabitEthernet 0/0/1
+Router2(config-if)#tunnel destination 10.0.3.2
+Router2(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Tunnel0, changed state to up
+
+```
+`OSPF`
+
+```
+Router2(config)#router ospf 1
+Router2(config-router)#network 192.168.10.0 0.0.0.255 area 0
+Router2(config-router)#network 10.10.10.0 0.0.0.255 area 0   # тоннельная  сеть
+Router2(config-router)#
+```
+# Создание тоннеля на Router3
+
+`Тоннель 0 `
+```
+Router2#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router2(config)#interface tunnel 0
+
+Router2(config-if)#
+%LINK-5-CHANGED: Interface Tunnel0, changed state to up
+
+Router2(config-if)#ip address 10.10.10.2 255.255.255.0
+Router2(config-if)#tunnel source gigabitEthernet 0/0/0
+Router2(config-if)#tunnel destination 10.0.2.2
+Router2(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Tunnel0, changed state to up
+
+```
+
+`Тоннель 1 `
+
+```
+Router2#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router2(config)#interface tunnel 1
+
+Router2(config-if)#
+%LINK-5-CHANGED: Interface Tunnel1, changed state to up
+
+Router2(config-if)#ip address 10.10.20.2 255.255.255.0
+Router2(config-if)#tunnel source gigabitEthernet 0/0/0
+Router2(config-if)#tunnel destination 10.0.1.2
+Router2(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Tunnel0, changed state to up
+
+```
+
+`OSPF`
+
+```
+Router2(config)#router ospf 1
+Router2(config-router)#network 192.168.10.0 0.0.0.255 area 0
+Router2(config-router)#network 10.10.10.0 0.0.0.255 area 0
+Router2(config-router)#network 10.10.20.0 0.0.0.255 area 0
+
+```
+
 
 
 ### Правила приема домашнего задания
