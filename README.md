@@ -68,6 +68,10 @@
 |Tunel0|10.10.10.0/24|  
 |Tunel1|10.10.20.0/24|  
 
+# Топология
+![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/1.PNG)
+
+
 # Настройка интерфейсов на router1 
 ```
 Router#configure terminal in
