@@ -91,6 +91,7 @@ SNMP Community: netology_snmp
 # Ответ
 # ![images5](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/5.PNG)
 
+# MAC
 # ![images6](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/6.PNG)
 
 ### Правила приема домашнего задания
