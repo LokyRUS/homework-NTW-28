@@ -24,7 +24,7 @@
 9. Подробнее о работе с Google-документами и загрузке решения на проверку можно найти в [«Руководстве по работе с материалами для обучения»](https://l.netology.ru/instruktsiya-po-materialami-dlya-obucheniya)
 
 ---
-![1](https://user-images.githubusercontent.com/85602495/187190729-16bfd7ad-a05a-487b-914c-6f4f896d8fe4.jpg)
+![1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/99.PNG)
 
 ### Задание 1. 
 
@@ -107,8 +107,8 @@ Router(config-if)#ip flow monitor MONITOR input
 Router(config-if)#ip flow monitor MONITOR output 
 Router(config-if)#
 ```
-# ![images1]()
-# ![images2]()
+# ![images1](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/1.PNG)
+# ![images2](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/2.PNG)
 
 ### Задание 2. 
 
@@ -124,10 +124,18 @@ Router(config-if)#
 
 ## Включаем на сервере syslog
  
- # ![images3]()
+ # ![images3](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/3.PNG)
  
 # Включаем логирование на роутере 
+```
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#login on
+Router(config)#logging host 192.168.10.100
+```
+### Выключаем интерфейс и смотрим логи gi0/0 ( Внешний ) 
 
+ # ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 ```
 Router#configure terminal 
 Enter configuration commands, one per line.  End with CNTL/Z.
