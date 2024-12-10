@@ -42,6 +42,73 @@ IP адресация произвольная.
 *Пришлите конфигурацию маршрутизатора и скрины NetFlow коллектора*
 
 ------
+# Ответ
+
+## Настройк интерфейсов на роутере
+
+```
+Router>en
+Router>enable 
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#ip address 192.168.10.254 255.255.255.0
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 10.10.10.254 255.255.255.0
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+```
+
+# Настройкка Netflow
+## Создаем RECORD и первый параметр для сбора нофрмации `Source/Destination IP` `tos` `tcp flags` и `next-hop`
+
+```
+Router(config)#flow record RECORD
+Router(config-flow-record)#match ipv4 source address 
+Router(config-flow-record)#match ipv4 destination address 
+Router(config-flow-record)#match ipv4 tos 
+Router(config-flow-record)#collect transport tcp flags
+Router(config-flow-record)#collect routing next-hop address ipv4
+Router(config-flow-record)#
+```
+
+# Настройка экспортера 
+
+```
+Router(config)#flow exporter EXPORTER
+Router(config-flow-exporter)#destination 192.168.10.100
+Router(config-flow-exporter)#transport udp 9996
+Router(config-flow-exporter)#
+```
+# Настройка монитор
+
+```
+Router(config)#flow monitor MONITOR
+Router(config-flow-monitor)# exporter EXPORTER
+Router(config-flow-monitor)# record RECORD
+```
+
+# Вешаем на интерфейс
+
+```
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip flow monitor MONITOR input 
+Router(config-if)#ip flow monitor MONITOR output 
+Router(config-if)#
+```
+# ![images1]()
+# ![images2]()
 
 ### Задание 2. 
 
