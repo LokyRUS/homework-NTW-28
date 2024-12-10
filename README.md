@@ -120,6 +120,24 @@ Router(config-if)#
 
 ------
 
+# Ответ
+
+## Включаем на сервере syslog
+ 
+ # ![images3]()
+ 
+# Включаем логирование на роутере 
+
+```
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#login on
+Router(config)#logging host 192.168.10.100
+```
+### Выключаем интерфейс и смотрим логи gi0/0 ( Внешний ) 
+
+ # ![images4]()
+
 ### Правила приема домашнего задания
 
 В личном кабинете отправлены:
