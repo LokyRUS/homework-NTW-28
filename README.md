@@ -144,7 +144,7 @@ Router(config)#logging host 192.168.10.100
 ```
 ### Выключаем интерфейс и смотрим логи gi0/0 ( Внешний ) 
 
- # ![images4]()
+ # ![images4](https://github.com/LokyRUS/homework-NTW-28/blob/nevidimka/images/4.PNG)
 
 ### Правила приема домашнего задания
 
